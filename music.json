@@ -1,0 +1,34 @@
+{
+    "audio": [
+        {
+            "title": "The Entertainer",
+            "mp3": "Entertainer.mp3",
+            "Composer": "Scott Joplin",
+            "Notes": "Arranged for garageband and guitar"
+        },
+        {
+            "title": "Jeeves and Wooster theme",
+            "mp3": "JeevesWoosterTheme.mp3",
+            "Composer": "Anne Dudley",
+            "Notes": "Arranged for garageband and guitar"
+        },
+        {
+            "title": "Rupture",
+            "mp3": "RuptureFinal.m4a",
+            "Composer": "Jolyon Thompson",
+            "Notes": "A tune written whilst recovering from a ruptured Achilles. Trying to include much of the guitar techniques I had recently been working upon."
+        },
+        {
+            "title": "Jeeves and Wooster theme",
+            "mp3": "Clarinet.m4a",
+            "Composer": "Traditional",
+            "Notes": "Arranged by Jolyon Thompson for four clarinets. This was just a bit of daft fun which actually didn't sound too bad when complete."
+        },
+        {
+            "title": "Suicide is Painless",
+            "mp3": "SuicidePainless.m4a",
+            "Composer": "Music Johnny Mandell",
+            "Notes": "Arranged for garageband and guitar and the first recording I ever made in this way."
+        }
+    ]
+}

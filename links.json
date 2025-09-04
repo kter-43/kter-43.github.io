@@ -1,0 +1,7 @@
+{
+  "images": [
+    {"src": "images/kter.png", "link": "Engineering.html", "alt": "Engineering Tools"},
+    {"src": "images/woodturn.png", "link": "woodturn.html", "alt": "Woodtuning Gallery"},
+    {"src": "images/music.png", "link": "music.html", "alt": "Musical recordings"}
+  ]
+}

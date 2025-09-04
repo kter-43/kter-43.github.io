@@ -1,0 +1,232 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/* Navigation bar */
+nav {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color: #aa95d1;
+  border-bottom: 1px solid #ddd;
+  padding: 10px 20px;
+  z-index: 1000;
+  display: flex;
+  align-items: left;
+}
+
+/* Navigation links */
+nav a {
+  margin-right: 15px;
+  text-decoration: none;
+  color: #5928B1;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #5928b1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav a {
+    margin: 5px 0;
+  }
+}
+
+
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background-color: #fdfdfd;
+  color: #222;
+  line-height: 1.6;
+  font-size: 16px;
+  padding: 20px;
+}
+
+/* Headings */
+h1, h2, h3 {
+  font-weight: 300;
+  margin-bottom: 20px;
+  color: #111;
+  text-align: center;
+}
+
+/* Links */
+a {
+  color: #5928b1;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #5928b1;
+}
+
+/* Layout */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Sections */
+section {
+  margin-bottom: 60px;
+}
+
+/* Buttons */
+button {
+  background-color: #5928b1;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #5928b1;
+}
+
+/* Media */
+img, video {
+  max-width: 320;
+  max-height: 240;
+  height: auto;
+  border-radius: 4px;
+}
+
+/* Audio and Video players */
+audio, video {
+  display: block;
+  margin: 20px auto;
+}
+
+/* Limit video width */
+video {
+  max-width: 320px;
+  max-height: 240;
+}
+
+/* Responsive containers */
+#audio-container,
+#video-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+/* Fade-in animation */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 600px) {
+  body {
+    font-size: 15px;
+    padding: 10px;
+  }
+
+  button {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  video {
+    max-width: 100%;
+  }
+
+  h1 {
+    font-size: 1.25rem;
+  }
+}
+
+
+.carousel {
+  width: 600px;
+  height: 400px;
+  overflow: hidden;
+  position: relative;
+  border: 2px solid #5928b1;
+  border-radius: 10px;
+  background: #5928b1;
+}
+.carousel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+.carousel img.active {
+  opacity: 1;
+}
+
+
+.image-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .image-grid a {
+      display: block;
+      width: 150px;
+      height: 100px;
+      overflow: hidden;
+      border: 1px solid #5928b1;
+      border-radius: 4px;
+      transition: transform 0.3s ease;
+    }
+
+    .image-grid a:hover {
+      transform: scale(1.05);
+    }
+
+    .image-grid img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    @media (max-width: 500px) {
+      .image-grid {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    
+table { border-collapse: collapse; margin-bottom: 20px; width: 600px;}
+    td, th { border: 1px solid #5928b1; padding: 8px; }
+    .gap { height: 16px; }
+    .audio-cell {text-align: right; vertical-align: middle; width: 220px; }
+    .title-cell {text-align: left; vertical-align: middle; }
+    .composer-notes {text-align: left; }
+
