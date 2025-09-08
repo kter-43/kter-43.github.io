@@ -1,16 +1,9 @@
 [
   {
-    "title": "Tunnel Ventilation Insights",
+    "title": "Welcome to KTER",
     "author": "Jo Thompson",
-    "tags": ["ventilation", "safety", "engineering"],
-    "text": "## Tunnel Ventilation\n\nThis post explores the **latest techniques** in tunnel ventilation and how they impact safety and efficiency.\n\n- Improved airflow\n- Reduced smoke\n- Enhanced safety",
-    "image": "vase1.png"
-  },
-  {
-    "title": "Fire Safety in Stations",
-    "author": "Mark Gilbey",
-    "tags": ["fire", "station", "safety"],
-    "text": "## Fire Safety\n\nAn overview of fire case studies in *London stations* and how design affects smoke movement.\n\n> Safety is paramount in public infrastructure.",
-    "image": "vase2.png"
+    "tags": ["welcome", "introduction", "random"],
+    "text": "## Hello\n\nWishing you a very good time of day, whatever that may be, where you are right now. Welcome to this area of cyberspace. This is devoted to things that I have found either interesting, annoying or at least in some form noteworthy. There is no real purpose or expectations and certainly no intention of this ever becoming interesting enough to get usbscribers. It is simply a way of my testing and developed skills I may find useful elsewhere. \n Thank you for finding me and bothering to read\n*KTER*",
+    "image": "kter.png"
   }
 ]
