@@ -1,0 +1,262 @@
+/* kter.CSS 5.02 March 31 2025 by Jan Egil and Borge Refsnes */
+html{box-sizing:border-box}*,*:before,*:after{box-sizing:inherit}
+/* Extract from normalize.css by Nicolas Gallagher and Jonathan Neal git.io/normalize */
+html{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}
+article,aside,details,figcaption,figure,footer,header,main,menu,nav,section{display:block}summary{display:list-item}
+audio,canvas,progress,video{display:inline-block}progress{vertical-align:baseline}
+audio:not([controls]){display:none;height:0}[hidden],template{display:none}
+a{background-color:transparent}a:active,a:hover{outline-width:0}
+abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}
+b,strong{font-weight:bolder}dfn{font-style:italic}mark{background:#ff0;color:#000}
+small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}
+sub{bottom:-0.25em}sup{top:-0.5em}figure{margin:1em 40px}img{border-style:none}
+code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}hr{box-sizing:content-box;height:0;overflow:visible}
+button,input,select,textarea,optgroup{font:inherit;margin:0}optgroup{font-weight:bold}
+button,input{overflow:visible}button,select{text-transform:none}
+button::-moz-focus-inner,[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner{border-style:none;padding:0}
+button:-moz-focusring,[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring{outline:1px dotted ButtonText}
+fieldset{border:1px solid #c0c0c0;margin:0 2px;padding:.35em .625em .75em}
+legend{color:inherit;display:table;max-width:100%;padding:0;white-space:normal}textarea{overflow:auto}
+[type=checkbox],[type=radio]{padding:0}
+[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}
+[type=search]::-webkit-search-decoration{-webkit-appearance:none}
+::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}
+/* End extract */
+html,body{font-family:Verdana,sans-serif;font-size:15px;line-height:1.5}html{overflow-x:hidden}
+h1{font-size:36px}h2{font-size:30px}h3{font-size:24px}h4{font-size:20px}h5{font-size:18px}h6{font-size:16px}
+.kter-serif{font-family:serif}.kter-sans-serif{font-family:sans-serif}.kter-cursive{font-family:cursive}.kter-monospace{font-family:monospace}
+h1,h2,h3,h4,h5,h6{font-family:"Segoe UI",Arial,sans-serif;font-weight:400;margin:10px 0}.kter-wide{letter-spacing:4px}
+hr{border:0;border-top:1px solid #eee;margin:20px 0}
+.kter-image{max-width:100%;height:auto}img{vertical-align:middle}a{color:inherit}
+.kter-table,.kter-table-all{border-collapse:collapse;border-spacing:0;width:100%;display:table}.kter-table-all{border:1px solid #ccc}
+.kter-bordered tr,.kter-table-all tr{border-bottom:1px solid #ddd}.kter-striped tbody tr:nth-child(even){background-color:#f1f1f1}
+.kter-table-all tr:nth-child(odd){background-color:#fff}.kter-table-all tr:nth-child(even){background-color:#f1f1f1}
+.kter-hoverable tbody tr:hover,.kter-ul.kter-hoverable li:hover{background-color:#ccc}.kter-centered tr th,.kter-centered tr td{text-align:center}
+.kter-table td,.kter-table th,.kter-table-all td,.kter-table-all th{padding:8px 8px;display:table-cell;text-align:left;vertical-align:top}
+.kter-table th:first-child,.kter-table td:first-child,.kter-table-all th:first-child,.kter-table-all td:first-child{padding-left:16px}
+.kter-btn,.kter-button{border:none;display:inline-block;padding:8px 16px;vertical-align:middle;overflow:hidden;text-decoration:none;color:inherit;background-color:inherit;text-align:center;cursor:pointer;white-space:nowrap}
+.kter-btn:hover{box-shadow:0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19)}
+.kter-btn,.kter-button{-webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}   
+.kter-disabled,.kter-btn:disabled,.kter-button:disabled{cursor:not-allowed;opacity:0.3}.kter-disabled *,:disabled *{pointer-events:none}
+.kter-btn.kter-disabled:hover,.kter-btn:disabled:hover{box-shadow:none}
+.kter-badge,.kter-tag{background-color:#000;color:#fff;display:inline-block;padding-left:8px;padding-right:8px;text-align:center}.kter-badge{border-radius:50%}
+.kter-ul{list-style-type:none;padding:0;margin:0}.kter-ul li{padding:8px 16px;border-bottom:1px solid #ddd}.kter-ul li:last-child{border-bottom:none}
+.kter-tooltip,.kter-display-container{position:relative}.kter-tooltip .kter-text{display:none}.kter-tooltip:hover .kter-text{display:inline-block}
+.kter-ripple:active{opacity:0.5}.kter-ripple{transition:opacity 0s}
+.kter-input{padding:8px;display:block;border:none;border-bottom:1px solid #ccc;width:100%}
+.kter-select{padding:9px 0;width:100%;border:none;border-bottom:1px solid #ccc}
+.kter-dropdown-click,.kter-dropdown-hover{position:relative;display:inline-block;cursor:pointer}
+.kter-dropdown-hover:hover .kter-dropdown-content{display:block}
+.kter-dropdown-hover:first-child,.kter-dropdown-click:hover{background-color:#ccc;color:#000}
+.kter-dropdown-hover:hover > .kter-button:first-child,.kter-dropdown-click:hover > .kter-button:first-child{background-color:#ccc;color:#000}
+.kter-dropdown-content{cursor:auto;color:#000;background-color:#fff;display:none;position:absolute;min-width:160px;margin:0;padding:0;z-index:1}
+.kter-check,.kter-radio{width:24px;height:24px;position:relative;top:6px}
+.kter-sidebar{height:100%;width:200px;background-color:#fff;position:fixed!important;z-index:1;overflow:auto}
+.kter-bar-block .kter-dropdown-hover,.kter-bar-block .kter-dropdown-click{width:100%}
+.kter-bar-block .kter-dropdown-hover .kter-dropdown-content,.kter-bar-block .kter-dropdown-click .kter-dropdown-content{min-width:100%}
+.kter-bar-block .kter-dropdown-hover .kter-button,.kter-bar-block .kter-dropdown-click .kter-button{width:100%;text-align:left;padding:8px 16px}
+.kter-main,#main{transition:margin-left .4s}
+.kter-modal{z-index:3;display:none;padding-top:100px;position:fixed;left:0;top:0;width:100%;height:100%;overflow:auto;background-color:rgb(0,0,0);background-color:rgba(0,0,0,0.4)}
+.kter-modal-content{margin:auto;background-color:#fff;position:relative;padding:0;outline:0;width:600px}
+.kter-bar{width:100%;overflow:hidden}.kter-center .kter-bar{display:inline-block;width:auto}
+.kter-bar .kter-bar-item{padding:8px 16px;float:left;width:auto;border:none;display:block;outline:0}
+.kter-bar .kter-dropdown-hover,.kter-bar .kter-dropdown-click{position:static;float:left}
+.kter-bar .kter-button{white-space:normal}
+.kter-bar-block .kter-bar-item{width:100%;display:block;padding:8px 16px;text-align:left;border:none;white-space:normal;float:none;outline:0}
+.kter-bar-block.kter-center .kter-bar-item{text-align:center}.kter-block{display:block;width:100%}
+.kter-responsive{display:block;overflow-x:auto}
+.kter-container:after,.kter-container:before,.kter-panel:after,.kter-panel:before,.kter-row:after,.kter-row:before,.kter-row-padding:after,.kter-row-padding:before,
+.kter-cell-row:before,.kter-cell-row:after,.kter-clear:after,.kter-clear:before,.kter-bar:before,.kter-bar:after{content:"";display:table;clear:both}
+.kter-col,.kter-half,.kter-third,.kter-twothird,.kter-threequarter,.kter-quarter{float:left;width:100%}
+.kter-col.s1{width:8.33333%}.kter-col.s2{width:16.66666%}.kter-col.s3{width:24.99999%}.kter-col.s4{width:33.33333%}
+.kter-col.s5{width:41.66666%}.kter-col.s6{width:49.99999%}.kter-col.s7{width:58.33333%}.kter-col.s8{width:66.66666%}
+.kter-col.s9{width:74.99999%}.kter-col.s10{width:83.33333%}.kter-col.s11{width:91.66666%}.kter-col.s12{width:99.99999%}
+@media (min-width:601px){.kter-col.m1{width:8.33333%}.kter-col.m2{width:16.66666%}.kter-col.m3,.kter-quarter{width:24.99999%}.kter-col.m4,.kter-third{width:33.33333%}
+.kter-col.m5{width:41.66666%}.kter-col.m6,.kter-half{width:49.99999%}.kter-col.m7{width:58.33333%}.kter-col.m8,.kter-twothird{width:66.66666%}
+.kter-col.m9,.kter-threequarter{width:74.99999%}.kter-col.m10{width:83.33333%}.kter-col.m11{width:91.66666%}.kter-col.m12{width:99.99999%}}
+@media (min-width:993px){.kter-col.l1{width:8.33333%}.kter-col.l2{width:16.66666%}.kter-col.l3{width:24.99999%}.kter-col.l4{width:33.33333%}
+.kter-col.l5{width:41.66666%}.kter-col.l6{width:49.99999%}.kter-col.l7{width:58.33333%}.kter-col.l8{width:66.66666%}
+.kter-col.l9{width:74.99999%}.kter-col.l10{width:83.33333%}.kter-col.l11{width:91.66666%}.kter-col.l12{width:99.99999%}}
+.kter-rest{overflow:hidden}.kter-stretch{margin-left:-16px;margin-right:-16px}
+.kter-content,.kter-auto{margin-left:auto;margin-right:auto}.kter-content{max-width:980px}.kter-auto{max-width:1140px}
+.kter-cell-row{display:table;width:100%}.kter-cell{display:table-cell}
+.kter-cell-top{vertical-align:top}.kter-cell-middle{vertical-align:middle}.kter-cell-bottom{vertical-align:bottom}
+.kter-hide{display:none!important}.kter-show-block,.kter-show{display:block!important}.kter-show-inline-block{display:inline-block!important}
+@media (max-width:1205px){.kter-auto{max-width:95%}}
+@media (max-width:600px){.kter-modal-content{margin:0 10px;width:auto!important}.kter-modal{padding-top:30px}
+.kter-dropdown-hover.kter-mobile .kter-dropdown-content,.kter-dropdown-click.kter-mobile .kter-dropdown-content{position:relative}	
+.kter-hide-small{display:none!important}.kter-mobile{display:block;width:100%!important}.kter-bar-item.kter-mobile,.kter-dropdown-hover.kter-mobile,.kter-dropdown-click.kter-mobile{text-align:center}
+.kter-dropdown-hover.kter-mobile,.kter-dropdown-hover.kter-mobile .kter-btn,.kter-dropdown-hover.kter-mobile .kter-button,.kter-dropdown-click.kter-mobile,.kter-dropdown-click.kter-mobile .kter-btn,.kter-dropdown-click.kter-mobile .kter-button{width:100%}}
+@media (max-width:768px){.kter-modal-content{width:500px}.kter-modal{padding-top:50px}}
+@media (min-width:993px){.kter-modal-content{width:900px}.kter-hide-large{display:none!important}.kter-sidebar.kter-collapse{display:block!important}}
+@media (max-width:992px) and (min-width:601px){.kter-hide-medium{display:none!important}}
+@media (max-width:992px){.kter-sidebar.kter-collapse{display:none}.kter-main{margin-left:0!important;margin-right:0!important}.kter-auto{max-width:100%}}
+.kter-top,.kter-bottom{position:fixed;width:100%;z-index:1}.kter-top{top:0}.kter-bottom{bottom:0}
+.kter-overlay{position:fixed;display:none;width:100%;height:100%;top:0;left:0;right:0;bottom:0;background-color:rgba(0,0,0,0.5);z-index:2}
+.kter-display-topleft{position:absolute;left:0;top:0}.kter-display-topright{position:absolute;right:0;top:0}
+.kter-display-bottomleft{position:absolute;left:0;bottom:0}.kter-display-bottomright{position:absolute;right:0;bottom:0}
+.kter-display-middle{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%)}
+.kter-display-left{position:absolute;top:50%;left:0%;transform:translate(0%,-50%);-ms-transform:translate(-0%,-50%)}
+.kter-display-right{position:absolute;top:50%;right:0%;transform:translate(0%,-50%);-ms-transform:translate(0%,-50%)}
+.kter-display-topmiddle{position:absolute;left:50%;top:0;transform:translate(-50%,0%);-ms-transform:translate(-50%,0%)}
+.kter-display-bottommiddle{position:absolute;left:50%;bottom:0;transform:translate(-50%,0%);-ms-transform:translate(-50%,0%)}
+.kter-display-container:hover .kter-display-hover{display:block}.kter-display-container:hover span.kter-display-hover{display:inline-block}.kter-display-hover{display:none}
+.kter-display-position{position:absolute}
+.kter-circle{border-radius:50%}
+.kter-round-small{border-radius:2px}.kter-round,.kter-round-medium{border-radius:4px}.kter-round-large{border-radius:8px}.kter-round-xlarge{border-radius:16px}.kter-round-xxlarge{border-radius:32px}
+.kter-row-padding,.kter-row-padding>.kter-half,.kter-row-padding>.kter-third,.kter-row-padding>.kter-twothird,.kter-row-padding>.kter-threequarter,.kter-row-padding>.kter-quarter,.kter-row-padding>.kter-col{padding:0 8px}
+.kter-container,.kter-panel{padding:0.01em 16px}.kter-panel{margin-top:16px;margin-bottom:16px}
+.kter-grid{display:grid}.kter-grid-padding{display:grid;gap:16px}.kter-flex{display:flex}
+.kter-text-center{text-align:center}.kter-text-bold,.kter-bold{font-weight:bold}.kter-text-italic,.kter-italic{font-style:italic}
+.kter-code,.kter-codespan{font-family:Consolas,"courier new";font-size:16px}
+.kter-code{width:auto;background-color:#fff;padding:8px 12px;border-left:4px solid #4CAF50;word-wrap:break-word}
+.kter-codespan{color:crimson;background-color:#f1f1f1;padding-left:4px;padding-right:4px;font-size:110%}
+.kter-card,.kter-card-2{box-shadow:0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12)}
+.kter-card-4,.kter-hover-shadow:hover{box-shadow:0 4px 10px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19)}
+.kter-spin{animation:kter-spin 2s infinite linear}@keyframes kter-spin{0%{transform:rotate(0deg)}100%{transform:rotate(359deg)}}
+.kter-animate-fading{animation:fading 10s infinite}@keyframes fading{0%{opacity:0}50%{opacity:1}100%{opacity:0}}
+.kter-animate-opacity{animation:opac 0.8s}@keyframes opac{from{opacity:0} to{opacity:1}}
+.kter-animate-top{position:relative;animation:animatetop 0.4s}@keyframes animatetop{from{top:-300px;opacity:0} to{top:0;opacity:1}}
+.kter-animate-left{position:relative;animation:animateleft 0.4s}@keyframes animateleft{from{left:-300px;opacity:0} to{left:0;opacity:1}}
+.kter-animate-right{position:relative;animation:animateright 0.4s}@keyframes animateright{from{right:-300px;opacity:0} to{right:0;opacity:1}}
+.kter-animate-bottom{position:relative;animation:animatebottom 0.4s}@keyframes animatebottom{from{bottom:-300px;opacity:0} to{bottom:0;opacity:1}}
+.kter-animate-zoom {animation:animatezoom 0.6s}@keyframes animatezoom{from{transform:scale(0)} to{transform:scale(1)}}
+.kter-animate-input{transition:width 0.4s ease-in-out}.kter-animate-input:focus{width:100%!important}
+.kter-opacity,.kter-hover-opacity:hover{opacity:0.60}.kter-opacity-off,.kter-hover-opacity-off:hover{opacity:1}
+.kter-opacity-max{opacity:0.25}.kter-opacity-min{opacity:0.75}
+.kter-greyscale-max,.kter-grayscale-max,.kter-hover-greyscale:hover,.kter-hover-grayscale:hover{filter:grayscale(100%)}
+.kter-greyscale,.kter-grayscale{filter:grayscale(75%)}.kter-greyscale-min,.kter-grayscale-min{filter:grayscale(50%)}
+.kter-sepia{filter:sepia(75%)}.kter-sepia-max,.kter-hover-sepia:hover{filter:sepia(100%)}.kter-sepia-min{filter:sepia(50%)}
+.kter-tiny{font-size:10px!important}.kter-small{font-size:12px!important}.kter-medium{font-size:15px!important}.kter-large{font-size:18px!important}
+.kter-xlarge{font-size:24px!important}.kter-xxlarge{font-size:36px!important}.kter-xxxlarge{font-size:48px!important}.kter-jumbo{font-size:64px!important}
+.kter-left-align{text-align:left!important}.kter-right-align{text-align:right!important}.kter-justify{text-align:justify!important}.kter-center{text-align:center!important}
+.kter-border-0{border:0!important}.kter-border{border:1px solid #ccc!important}
+.kter-border-top{border-top:1px solid #ccc!important}.kter-border-bottom{border-bottom:1px solid #ccc!important}
+.kter-border-left{border-left:1px solid #ccc!important}.kter-border-right{border-right:1px solid #ccc!important}
+.kter-topbar{border-top:6px solid #ccc!important}.kter-bottombar{border-bottom:6px solid #ccc!important}
+.kter-leftbar{border-left:6px solid #ccc!important}.kter-rightbar{border-right:6px solid #ccc!important}
+.kter-section,.kter-code{margin-top:16px!important;margin-bottom:16px!important}
+.kter-margin{margin:16px!important}.kter-margin-top{margin-top:16px!important}.kter-margin-bottom{margin-bottom:16px!important}
+.kter-margin-left{margin-left:16px!important}.kter-margin-right{margin-right:16px!important}
+.kter-padding-small{padding:4px 8px!important}.kter-padding{padding:8px 16px!important}.kter-padding-large{padding:12px 24px!important}
+.kter-padding-16{padding-top:16px!important;padding-bottom:16px!important}.kter-padding-24{padding-top:24px!important;padding-bottom:24px!important}
+.kter-padding-32{padding-top:32px!important;padding-bottom:32px!important}.kter-padding-48{padding-top:48px!important;padding-bottom:48px!important}
+.kter-padding-64{padding-top:64px!important;padding-bottom:64px!important}
+.kter-padding-top-64{padding-top:64px!important}.kter-padding-top-48{padding-top:48px!important}
+.kter-padding-top-32{padding-top:32px!important}.kter-padding-top-24{padding-top:24px!important}
+.kter-left{float:left!important}.kter-right{float:right!important}
+.kter-button:hover{color:#000!important;background-color:#ccc!important}
+.kter-transparent,.kter-hover-none:hover{background-color:transparent!important}
+.kter-hover-none:hover{box-shadow:none!important}
+.kter-rtl{direction:rtl}.kter-ltr{direction:ltr}
+/* Colors */
+.kter-amber,.kter-hover-amber:hover{color:#000!important;background-color:#ffc107!important}
+.kter-aqua,.kter-hover-aqua:hover{color:#000!important;background-color:#00ffff!important}
+.kter-blue,.kter-hover-blue:hover{color:#fff!important;background-color:#2196F3!important}
+.kter-light-blue,.kter-hover-light-blue:hover{color:#000!important;background-color:#87CEEB!important}
+.kter-brown,.kter-hover-brown:hover{color:#fff!important;background-color:#795548!important}
+.kter-cyan,.kter-hover-cyan:hover{color:#000!important;background-color:#00bcd4!important}
+.kter-blue-grey,.kter-hover-blue-grey:hover,.kter-blue-gray,.kter-hover-blue-gray:hover{color:#fff!important;background-color:#607d8b!important}
+.kter-green,.kter-hover-green:hover{color:#fff!important;background-color:#4CAF50!important}
+.kter-light-green,.kter-hover-light-green:hover{color:#000!important;background-color:#8bc34a!important}
+.kter-indigo,.kter-hover-indigo:hover{color:#fff!important;background-color:#3f51b5!important}
+.kter-khaki,.kter-hover-khaki:hover{color:#000!important;background-color:#f0e68c!important}
+.kter-lime,.kter-hover-lime:hover{color:#000!important;background-color:#cddc39!important}
+.kter-orange,.kter-hover-orange:hover{color:#000!important;background-color:#ff9800!important}
+.kter-deep-orange,.kter-hover-deep-orange:hover{color:#fff!important;background-color:#ff5722!important}
+.kter-pink,.kter-hover-pink:hover{color:#fff!important;background-color:#e91e63!important}
+.kter-purple,.kter-hover-purple:hover{color:#fff!important;background-color:#8974b1!important}
+.kter-deep-purple,.kter-hover-deep-purple:hover{color:#fff!important;background-color:#5928B1!important}
+.kter-red,.kter-hover-red:hover{color:#fff!important;background-color:#f44336!important}
+.kter-sand,.kter-hover-sand:hover{color:#000!important;background-color:#fdf5e6!important}
+.kter-teal,.kter-hover-teal:hover{color:#fff!important;background-color:#009688!important}
+.kter-yellow,.kter-hover-yellow:hover{color:#000!important;background-color:#ffeb3b!important}
+.kter-white,.kter-hover-white:hover{color:#000!important;background-color:#fff!important}
+.kter-black,.kter-hover-black:hover{color:#fff!important;background-color:#000!important}
+.kter-grey,.kter-hover-grey:hover,.kter-gray,.kter-hover-gray:hover{color:#000!important;background-color:#9e9e9e!important}
+.kter-light-grey,.kter-hover-light-grey:hover,.kter-light-gray,.kter-hover-light-gray:hover{color:#000!important;background-color:#f1f1f1!important}
+.kter-dark-grey,.kter-hover-dark-grey:hover,.kter-dark-gray,.kter-hover-dark-gray:hover{color:#fff!important;background-color:#616161!important}
+.kter-asphalt,.kter-hover-asphalt:hover{color:#fff!important;background-color:#343a40!important}
+.kter-crimson,.kter-hover-crimson:hover{color:#fff!important;background-color:#a20025!important}
+.kter-cobalt,kter-hover-cobalt:hover{color:#fff!important;background-color:#0050ef!important}
+.kter-emerald,.kter-hover-emerald:hover{color:#fff!important;background-color:#008a00!important}
+.kter-olive,.kter-hover-olive:hover{color:#fff!important;background-color:#6d8764!important}
+.kter-paper,.kter-hover-paper:hover{color:#000!important;background-color:#f8f9fa!important}
+.kter-sienna,.kter-hover-sienna:hover{color:#fff!important;background-color:#a0522d!important}
+.kter-taupe,.kter-hover-taupe:hover{color:#fff!important;background-color:#87794e!important}
+.kter-danger{color:#fff!important;background-color:#dd0000!important}
+.kter-note{color:#000!important;background-color:#fff599!important}
+.kter-info{color:#fff!important;background-color:#0a6fc2!important}
+.kter-warning{color:#000!important;background-color:#ffb305!important}
+.kter-success{color:#fff!important;background-color:#008a00!important}
+.kter-pale-red,.kter-hover-pale-red:hover{color:#000!important;background-color:#ffdddd!important}
+.kter-pale-green,.kter-hover-pale-green:hover{color:#000!important;background-color:#ddffdd!important}
+.kter-pale-yellow,.kter-hover-pale-yellow:hover{color:#000!important;background-color:#ffffcc!important}
+.kter-pale-blue,.kter-hover-pale-blue:hover{color:#000!important;background-color:#ddffff!important}
+.kter-text-amber,.kter-hover-text-amber:hover{color:#ffc107!important}
+.kter-text-aqua,.kter-hover-text-aqua:hover{color:#00ffff!important}
+.kter-text-blue,.kter-hover-text-blue:hover{color:#2196F3!important}
+.kter-text-light-blue,.kter-hover-text-light-blue:hover{color:#87CEEB!important}
+.kter-text-brown,.kter-hover-text-brown:hover{color:#795548!important}
+.kter-text-cyan,.kter-hover-text-cyan:hover{color:#00bcd4!important}
+.kter-text-blue-grey,.kter-hover-text-blue-grey:hover,.kter-text-blue-gray,.kter-hover-text-blue-gray:hover{color:#607d8b!important}
+.kter-text-green,.kter-hover-text-green:hover{color:#4CAF50!important}
+.kter-text-light-green,.kter-hover-text-light-green:hover{color:#8bc34a!important}
+.kter-text-indigo,.kter-hover-text-indigo:hover{color:#3f51b5!important}
+.kter-text-khaki,.kter-hover-text-khaki:hover{color:#b4aa50!important}
+.kter-text-lime,.kter-hover-text-lime:hover{color:#cddc39!important}
+.kter-text-orange,.kter-hover-text-orange:hover{color:#ff9800!important}
+.kter-text-deep-orange,.kter-hover-text-deep-orange:hover{color:#ff5722!important}
+.kter-text-pink,.kter-hover-text-pink:hover{color:#e91e63!important}
+.kter-text-purple,.kter-hover-text-purple:hover{color:#8974b1!important}
+.kter-text-deep-purple,.kter-hover-text-deep-purple:hover{color:#5928B1!important}
+.kter-text-red,.kter-hover-text-red:hover{color:#f44336!important}
+.kter-text-sand,.kter-hover-text-sand:hover{color:#fdf5e6!important}
+.kter-text-teal,.kter-hover-text-teal:hover{color:#009688!important}
+.kter-text-yellow,.kter-hover-text-yellow:hover{color:#d2be0e!important}
+.kter-text-white,.kter-hover-text-white:hover{color:#fff!important}
+.kter-text-black,.kter-hover-text-black:hover{color:#000!important}
+.kter-text-grey,.kter-hover-text-grey:hover,.kter-text-gray,.kter-hover-text-gray:hover{color:#757575!important}
+.kter-text-light-grey,.kter-hover-text-light-grey:hover,.kter-text-light-gray,.kter-hover-text-light-gray:hover{color:#f1f1f1!important}
+.kter-text-dark-grey,.kter-hover-text-dark-grey:hover,.kter-text-dark-gray,.kter-hover-text-dark-gray:hover{color:#3a3a3a!important}
+.kter-border-amber,.kter-hover-border-amber:hover{border-color:#ffc107!important}
+.kter-border-aqua,.kter-hover-border-aqua:hover{border-color:#00ffff!important}
+.kter-border-blue,.kter-hover-border-blue:hover{border-color:#2196F3!important}
+.kter-border-light-blue,.kter-hover-border-light-blue:hover{border-color:#87CEEB!important}
+.kter-border-brown,.kter-hover-border-brown:hover{border-color:#795548!important}
+.kter-border-cyan,.kter-hover-border-cyan:hover{border-color:#00bcd4!important}
+.kter-border-blue-grey,.kter-hover-border-blue-grey:hover,.kter-border-blue-gray,.kter-hover-border-blue-gray:hover{border-color:#607d8b!important}
+.kter-border-green,.kter-hover-border-green:hover{border-color:#4CAF50!important}
+.kter-border-light-green,.kter-hover-border-light-green:hover{border-color:#8bc34a!important}
+.kter-border-indigo,.kter-hover-border-indigo:hover{border-color:#3f51b5!important}
+.kter-border-khaki,.kter-hover-border-khaki:hover{border-color:#f0e68c!important}
+.kter-border-lime,.kter-hover-border-lime:hover{border-color:#cddc39!important}
+.kter-border-orange,.kter-hover-border-orange:hover{border-color:#ff9800!important}
+.kter-border-deep-orange,.kter-hover-border-deep-orange:hover{border-color:#ff5722!important}
+.kter-border-pink,.kter-hover-border-pink:hover{border-color:#e91e63!important}
+.kter-border-purple,.kter-hover-border-purple:hover{border-color:#8974b1!important}
+.kter-border-deep-purple,.kter-hover-border-deep-purple:hover{border-color:#5928B1!important}
+.kter-border-red,.kter-hover-border-red:hover{border-color:#f44336!important}
+.kter-border-sand,.kter-hover-border-sand:hover{border-color:#fdf5e6!important}
+.kter-border-teal,.kter-hover-border-teal:hover{border-color:#009688!important}
+.kter-border-yellow,.kter-hover-border-yellow:hover{border-color:#ffeb3b!important}
+.kter-border-white,.kter-hover-border-white:hover{border-color:#fff!important}
+.kter-border-black,.kter-hover-border-black:hover{border-color:#000!important}
+.kter-border-grey,.kter-hover-border-grey:hover,.kter-border-gray,.kter-hover-border-gray:hover{border-color:#9e9e9e!important}
+.kter-border-light-grey,.kter-hover-border-light-grey:hover,.kter-border-light-gray,.kter-hover-border-light-gray:hover{border-color:#f1f1f1!important}
+.kter-border-dark-grey,.kter-hover-border-dark-grey:hover,.kter-border-dark-gray,.kter-hover-border-dark-gray:hover{border-color:#616161!important}
+.kter-border-pale-red,.kter-hover-border-pale-red:hover{border-color:#ffe7e7!important}.kter-border-pale-green,.kter-hover-border-pale-green:hover{border-color:#e7ffe7!important}
+.kter-border-pale-yellow,.kter-hover-border-pale-yellow:hover{border-color:#ffffcc!important}.kter-border-pale-blue,.kter-hover-border-pale-blue:hover{border-color:#e7ffff!important}
+#sidebar {width: 250px; padding: 20px; background-color: #f4f4f4; border-right: 1px solid #ccc;}
+#main {flex-grow: 1; padding: 20px;}
+.blog-post {display: flex; margin-top: 20px; }
+.blog-text {flex: 1; padding-right: 20px;}
+.blog-image {flex: 1;}
+.blog-image img {max-width: 100%; height: auto;}
+input[type="text"] {width: 100%; padding: 8px; margin-bottom: 10px;}
+.sidebar-title {cursor: pointer; margin-bottom: 10px; color: blue; text-decoration: underline;}
+.image-grid {display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;}
+.image-grid a {display: block; width: 150px; height: 100px; overflow: hidden; border: 1px solid #5928b1; border-radius: 4px; transition: transform 0.3s ease;}
+.image-grid a:hover {transform: scale(1.05);}
+.image-grid img {width: 100%; height: 100%; object-fit: cover; display: block;}
+@media (max-width: 500px) {.image-grid {flex-direction: column; align-items: center;}}

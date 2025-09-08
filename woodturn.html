@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>KTER</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/kter.css" />
 </head>
 <body>
 	
@@ -11,16 +11,47 @@
 <script src="js/carousel.js"></script>
 <script src="js/gallery.js"></script>
 <script src="js/music.js"></script>
-<script src="js/video.js"></script>
+<script src="js/blog.js"></script>
 
 <main>
-<nav>
-  <a class="navbar-brand" href="index.html"><img class="logo" style="width: 75px; height: auto; float: left;" src="images/KTER.png"></a>
-  <a href="home.html">Home</a>
-  <a href="music.html">Music</a>
-  <a href="woodturn.html">Woodturnings</a>
-  <h1>KTER - Woodturning</h1>
-</nav>
+<!-- Navbar -->
+<div class="kter-top">
+  <div class="kter-bar kter-purple kter-card">
+    <a class="navbar-brand" href="index.html"><img class="logo" style="width: 75px; height: auto; float: left;" src="images/KTER.png"></a>
+  
+    <a class="kter-bar-item kter-button kter-padding-large kter-hide-medium kter-hide-large kter-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="index.html" class="kter-bar-item kter-button kter-padding-large kter-hover-deep-purple kter-text-deep-purple kter-hover-text-purple">HOME</a>
+    <a href="music.html" class="kter-bar-item kter-button kter-padding-large kter-hide-small kter-hover-deep-purple kter-text-deep-purple kter-hover-text-purple">MUSIC</a>
+    <a href="woodturn.html" class="kter-bar-item kter-button kter-padding-large kter-hide-small kter-hover-deep-purple kter-text-deep-purple kter-hover-text-purple">WOODTURNING</a>
+    <!--
+    <a href="#contact" class="kter-bar-item kter-button kter-padding-large kter-hide-small kter-hover-deep-purple kter-text-deep-purple kter-hover-text-purple">CONTACT</a>
+    <div class="kter-dropdown-hover kter-hide-small">
+      <button class="kter-padding-large kter-button" title="More">MORE <i class="fa fa-caret-down"></i></button>     
+      <div class="kter-dropdown-content kter-bar-block kter-card-4">
+        <a href="#" class="kter-bar-item kter-button">Merchandise</a>
+        <a href="#" class="kter-bar-item kter-button">Extras</a>
+        <a href="#" class="kter-bar-item kter-button">Media</a>
+      </div>
+    </div>
+    <a href="javascript:void(0)" class="kter-padding-large kter-hover-red kter-hide-small kter-right"><i class="fa fa-search"></i></a>
+  -->
+  </div>
+</div>
+
+<!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
+<div id="navDemo" class="kter-bar-block kter-black kter-hide kter-hide-large kter-hide-medium kter-top" style="margin-top:46px">
+  <a href="music.html" class="kter-bar-item kter-button kter-padding-large" onclick="myFunction()">MUSIC</a>
+  <a href="woodturn.html" class="kter-bar-item kter-button kter-padding-large" onclick="myFunction()">WOODTURNING</a>
+   <!--
+    <a href="#contact" class="kter-bar-item kter-button kter-padding-large" onclick="myFunction()">CONTACT</a>
+  <a href="#" class="kter-bar-item kter-button kter-padding-large" onclick="myFunction()">MERCH</a>
+-->
+</div>
+
+<!-- Intro -->
+ <div class="kter-content" style="max-width:2000px;margin-top:46px">
+<!-- Add break so that the rest of the page lines up doccrectly-->
+</div>
 
 <h1>Woodturnings</h1>
 <p>This became a hobby of mine  when I bought my first lathe 2018. Some of the pieces I am proudest of
@@ -28,6 +59,12 @@ feature below. Where possible I have included the wood type to the best of my kn
 wood I may be mistaken.</p>
 
 <div id="gallery" data-json="woodturn.json"></div>
+
+<!-- Footer -->
+<footer class="kter-container kter-padding-64 kter-center kter-opacity kter-light-grey kter-xlarge">
+  <div class="image-grid" id="image-grid"></div>
+  <p class="kter-medium">KTER since 1900 and typing error</p>
+</footer>
 
 </main>
 </body>
