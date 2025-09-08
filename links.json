@@ -1,7 +1,8 @@
 {
   "images": [
-    {"src": "images/kter.png", "link": "index.html", "alt": "Home"},
+    {"src": "images/KTER.png", "link": "index.html", "alt": "Home"},
     {"src": "images/woodturn.png", "link": "woodturn.html", "alt": "Woodtuning Gallery"},
     {"src": "images/music.png", "link": "music.html", "alt": "Musical recordings"}
   ]
 }
+
