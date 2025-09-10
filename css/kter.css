@@ -28,7 +28,7 @@ h1{font-size:36px}h2{font-size:30px}h3{font-size:24px}h4{font-size:20px}h5{font-
 h1,h2,h3,h4,h5,h6{font-family:"Segoe UI",Arial,sans-serif;font-weight:400;margin:10px 0}.kter-wide{letter-spacing:4px}
 hr{border:0;border-top:1px solid #eee;margin:20px 0}
 .kter-image{max-width:100%;height:auto}img{vertical-align:middle}a{color:inherit}
-.kter-table,.kter-table-all{border-collapse:collapse;border-spacing:0;width:100%;display:table}.kter-table-all{border:1px solid #ccc}
+.kter-table,.kter-table-all{border-collapse:collapse;border-spacing:0;width:100%;display:table}.kter-table-all{border:1px solid #5928B1}
 .kter-bordered tr,.kter-table-all tr{border-bottom:1px solid #ddd}.kter-striped tbody tr:nth-child(even){background-color:#f1f1f1}
 .kter-table-all tr:nth-child(odd){background-color:#fff}.kter-table-all tr:nth-child(even){background-color:#f1f1f1}
 .kter-hoverable tbody tr:hover,.kter-ul.kter-hoverable li:hover{background-color:#ccc}.kter-centered tr th,.kter-centered tr td{text-align:center}
@@ -260,3 +260,11 @@ input[type="text"] {width: 100%; padding: 8px; margin-bottom: 10px;}
 .image-grid a:hover {transform: scale(1.05);}
 .image-grid img {width: 100%; height: 100%; object-fit: cover; display: block;}
 @media (max-width: 500px) {.image-grid {flex-direction: column; align-items: center;}}
+.banner {position: relative;width: 100%;height: 600px;overflow: hidden;}
+.banner img {width: 100%;height: 100%;object-fit: cover;position: absolute;opacity: 0;transition: opacity 1s ease-in-out;}
+.banner img.active {opacity: 1;}
+.banner-text {position: absolute;top: 75%;left: 50%;transform: translate(-50%, -50%);color: #5928B1;text-align: center;background-color: rgba(0, 0, 0, 0.5);padding: 20px;}
+.banner-text h1 {font-size: 36px; margin: 0; }
+.banner-text p {font-size: 18px; }
+.banner-text a {display: inline-block; margin-top: 10px; padding: 10px 20px; background-color: #5928B1; color: white; text-decoration: none; font-size: 16px; border-radius: 5px;}
+.banner-text a:hover {background-color: #5928B1;}
