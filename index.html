@@ -53,6 +53,19 @@
  <div class="kter-content" style="max-width:2000px;margin-top:46px">
 <!-- Add break so that the rest of the page lines up doccrectly-->
 </div>
+<!--
+<div class="banner">
+    <img src="images/vase1.png" class="active" alt="Banner Image 1">
+    <img src="images/vase2.png" alt="Banner Image 2">
+    <img src="images/wolf.png" alt="Banner Image 3">
+    <img src="images/woodpecker.png" alt="Banner Image 4">
+    <div class="banner-text">
+        <h1>Welcome to Our Site</h1>
+        <p>Your tagline goes here</p>
+        <a href="#">Explore More</a>
+    </div>
+</div>
+-->
 
 <!-- Blog -->
  <h2 class="kter-wide">Welcome to KTER</h2>
@@ -80,6 +93,15 @@ useful record of it easily to hand.</p>
   <p class="kter-medium">KTER since 1900 and typing error</p>
 </footer>
 
+<script>
+    let currentIndex = 0;
+    const images = document.querySelectorAll('.banner img');
 
+    setInterval(() => {
+        images[currentIndex].classList.remove('active');
+        currentIndex = (currentIndex + 1) % images.length;
+        images[currentIndex].classList.add('active');
+    }, 5000);
+</script>
 </main>
 </body>
