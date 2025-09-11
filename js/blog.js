@@ -1,49 +1,43 @@
+let posts = [];
 
-fetch('blogData.json')
-  .then(response => response.json())
-  .then(posts => {
-    const titlesList = document.getElementById('blog-titles');
-    const detailsDiv = document.getElementById('blog-details');
+async function fetchPosts() {
+    const response = await fetch('blogData.json');
+    posts = await response.json();
+    posts.sort((a, b) => new Date(b.date) - new Date(a.date));
+    displayPostList(posts);
+    if (posts.length > 0) {
+        loadPost(posts[0]);
+    }
+}
 
-    function showPost(idx) {
-      const post = posts[idx];
-      detailsDiv.innerHTML = `
+function displayPostList(postArray) {
+    const postList = document.getElementById('postList');
+    postList.innerHTML = '';
+    postArray.forEach(post => {
+        const link = document.createElement('a');
+        link.textContent = post.title;
+        link.className = 'post-link';
+        link.onclick = () => loadPost(post);
+        postList.appendChild(link);
+    });
+}
+
+async function loadPost(post) {
+    document.getElementById('postMeta').innerHTML = `
         <h2>${post.title}</h2>
         <p><strong>Author:</strong> ${post.author}</p>
         <p><strong>Tags:</strong> ${post.tags.join(', ')}</p>
-        <div>${post.text
-          .replace(/\*\*(.*?)\*\*/g, '<b>$1</b>')
-          .replace(/## (.*?)\n/g, '<h3>$1</h3>')
-          .replace(/- (.*?)(\n|$)/g, '<li>$1</li>')
-          .replace(/\n/g, '<br>')}</div>
-        ${post.image ? `<img src="images/${post.image}" alt="${post.title}" style="max-width: 600px; margin-top: 16px;">` : ''}
-      `;
-    }
+    `;
+    const response = await fetch(post.link);
+    const markdown = await response.text();
+    document.getElementById('postContent').innerHTML = marked.parse(markdown);
+    document.getElementById('postImage').innerHTML = post.image ? `<img src="${post.image}" alt="Post Image">` : '';
+}
 
-    function renderTitles(filteredPosts) {
-      titlesList.innerHTML = '';
-      filteredPosts.forEach((post, idx) => {
-        const li = document.createElement('li');
-        li.textContent = post.title;
-        li.style.cursor = 'pointer';
-        li.onclick = () => showPost(posts.indexOf(post));
-        titlesList.appendChild(li);
-      });
-    }
+document.getElementById('searchBar').addEventListener('input', function() {
+    const query = this.value.toLowerCase();
+    const filteredPosts = posts.filter(post => post.tags.some(tag => tag.toLowerCase().includes(query)));
+    displayPostList(filteredPosts);
+});
 
-    renderTitles(posts);
-    if (posts.length > 0) showPost(0);
-
-    document.getElementById('tag-search').addEventListener('input', function() {
-      const query = this.value.toLowerCase();
-      const filtered = posts.filter(post =>
-        post.tags.some(tag => tag.toLowerCase().includes(query))
-      );
-      renderTitles(filtered);
-      if (filtered.length > 0) {
-        showPost(posts.indexOf(filtered[0]));
-      } else {
-        detailsDiv.innerHTML = '<p>No posts found for this tag.</p>';
-      }
-    });
-  });
+fetchPosts();
