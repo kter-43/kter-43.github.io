@@ -5,5 +5,12 @@
     "tags": ["welcome", "introduction", "random"],
     "link": "blog/Welcome.md",
     "date": "2025-09-10"
+  },
+  {
+    "title": "Why bother?",
+    "author": "KTER",
+    "tags": ["writing","random","purpose"],
+    "link": "blog/whybother.md",
+    "date": "2025-09-11"
   }
 ]
