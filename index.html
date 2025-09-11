@@ -1,21 +1,13 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>KTER</title>
-  <link rel="stylesheet" href="css/kter.css" />
+    <meta charset="UTF-8">
+    <title>Post Viewer</title>
+    <link rel="stylesheet" href="css/kter.css" />
 </head>
 <body>
-	
-<script src="js/links.js"></script>
-<script src="js/carousel.js"></script>
-<script src="js/gallery.js"></script>
-<script src="js/music.js"></script>
-<script src="js/blog.js"></script>
 
-<main>
-<!-- Navbar -->
+    <!-- Navbar -->
 <div class="kter-top">
   <div class="kter-bar kter-purple kter-card">
     <a class="navbar-brand" href="index.html"><img class="logo" style="width: 75px; height: auto; float: left;" src="images/KTER.png"></a>
@@ -54,55 +46,30 @@
 <!-- Add break so that the rest of the page lines up doccrectly-->
 </div>
 
-<div class="banner">
-    <img src="images/bn01.png" class="active" alt="Banner Image 1">
-    <img src="images/bn02.png" alt="Banner Image 2">
-    <img src="images/bn05.png" alt="Banner Image 3">
-    <img src="images/bn04.png" alt="Banner Image 4">
-    <div class="banner-text">
-        <h1>Welcome to KTER</h1>
-        <p>It's only impossible if you don't try!</p>
-        <!--<a href="#">Explore More</a>-->
+<div class="kter-row-padding">
+    <h2 class="kter-wide">KTER's Blog</h2>
+    <p class="kter-opacity"><i>In the mistaken belief that my thoughts are interesting</i></p>
+  
+    
+    <div id="sidebar" class="kter-quarter">
+        <input type="text" id="searchBar" placeholder="Search by tag...">
+        <div id="postList"></div>
+    </div>
+    <div id="main" class="kter-twothird">
+        <div id="postMeta"></div>
+        <div id="postContent"></div>
+        <div id="postImage"></div>
     </div>
 </div>
 
-
-<!-- Blog -->
-<!--
- <h2 class="kter-wide">Welcome to KTER</h2>
-<p>This website hosts a range of stuff. Some are tools I find useful in day to day life, some are longer term pet projects I 
-am (un)justifiably proud of. Some are held here so that when someone asks about that things I do/did then there may be a 
-useful record of it easily to hand.</p>
-<p>Essentially this is a random, occassionally currated, collection of things that one man thought he needed.</p>-->
-  <h2 class="kter-wide">KTER's Blog</h2>
-  <p class="kter-opacity"><i>In the mistaken belief that my thoughts are interesting</i></p>
-  
-    <div id="blog-section" style="display: flex; flex-direction: row; margin-top: 40px;">
-    <div style="flex: 1; max-width: 220px; border-right: 1px solid #ccc; padding: 16px;">
-      <h3>Titles</h3>
-      <ul id="blog-titles" style="list-style: none; padding: 0;"></ul>
-    </div>
-    <div style="flex: 3; padding: 16px;">
-      <input type="text" id="tag-search" placeholder="Search by tag..." style="width: 100%; margin-bottom: 16px; padding: 8px; font-size: 1em;">
-      <div id="blog-details"></div>
-    </div>
-  </div>
-
-<!-- Footer -->
+    <!-- Footer -->
 <footer class="kter-container kter-padding-64 kter-center kter-opacity kter-light-grey kter-xlarge">
   <div class="image-grid" id="image-grid"></div>
   <p class="kter-medium">KTER since 1900 and typing error</p>
 </footer>
-
-<script>
-    let currentIndex = 0;
-    const images = document.querySelectorAll('.banner img');
-
-    setInterval(() => {
-        images[currentIndex].classList.remove('active');
-        currentIndex = (currentIndex + 1) % images.length;
-        images[currentIndex].classList.add('active');
-    }, 5000);
-</script>
-</main>
+    
+    <script src="js/links.js"></script>
+    <script src="js/blog.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </body>
+</html>
