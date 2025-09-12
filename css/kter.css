@@ -1,3 +1,4 @@
+
 /* kter.CSS 5.02 March 31 2025 by Jan Egil and Borge Refsnes */
 html{box-sizing:border-box}*,*:before,*:after{box-sizing:inherit}
 /* Extract from normalize.css by Nicolas Gallagher and Jonathan Neal git.io/normalize */
@@ -248,7 +249,14 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 .kter-border-pale-red,.kter-hover-border-pale-red:hover{border-color:#ffe7e7!important}.kter-border-pale-green,.kter-hover-border-pale-green:hover{border-color:#e7ffe7!important}
 .kter-border-pale-yellow,.kter-hover-border-pale-yellow:hover{border-color:#ffffcc!important}.kter-border-pale-blue,.kter-hover-border-pale-blue:hover{border-color:#e7ffff!important}
 #sidebar {width: 250px; padding: 20px; background-color: #f4f4f4; border-right: 1px solid #ccc;}
-#main {flex-grow: 1; padding: 20px;}
+.post-link {
+            display: block;
+            margin-bottom: 10px;
+            cursor: pointer;
+            color: blue;
+            text-decoration: underline;
+        }
+#content {flex-grow: 1; padding: 20px;}
 .blog-post {display: flex; margin-top: 20px; }
 .blog-text {flex: 1; padding-right: 20px;}
 .blog-image {flex: 1;}
