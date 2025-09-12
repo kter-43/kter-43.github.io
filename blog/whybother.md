@@ -1,4 +1,4 @@
-#Why bother 
+# Why bother 
 
 The internet is now full of many many people writing many many things many many ways. Much of what is available is
 - better written than I could manage
