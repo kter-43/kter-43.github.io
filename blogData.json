@@ -12,5 +12,12 @@
     "tags": ["writing","random","purpose"],
     "link": "blog/whybother.md",
     "date": "2025-09-11"
+  },
+  {
+    "title": "Musical musings",
+    "author": "KTER",
+    "tags": ["music","fun","clarinet"],
+    "link": "blog/musicfood.md",
+    "date": "2025-09-13"
   }
 ]
