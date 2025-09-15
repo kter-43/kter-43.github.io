@@ -9,7 +9,7 @@ fetch('music.json')
       table.innerHTML = `
         <tr>
           <td class="title-cell"><h4>${item.title}</h4></td>
-          <td class="audio-cell">        
+          <td class="composer-notes">${item.Composer}</td>class="audio-cell">        
             <audio controls>
               <source src="audio/${item.mp3}" type="audio/mp3">
               Your browser does not support the audio element.
@@ -17,10 +17,15 @@ fetch('music.json')
           </td>
         </tr>
         <tr>
-          <td colspan="2" class="composer-notes">${item.Composer}</td>
+          <td colspan="2" class="composer-notes">${item.Notes}</td>
         </tr>
         <tr>
-          <td colspan="2" class="composer-notes">${item.Notes}</td>
+          <td colspan="2" class="audio-cell">        
+            <audio controls>
+              <source src="audio/${item.mp3}" type="audio/mp3">
+              Your browser does not support the audio element.
+            </audio>
+          </td>
         </tr>
       `;
       container.appendChild(table);
@@ -35,3 +40,4 @@ fetch('music.json')
     document.getElementById('music-tables').textContent = 'Error loading music data.';
     console.error(error);
   });
+
