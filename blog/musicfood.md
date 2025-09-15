@@ -9,7 +9,7 @@ I spent many years doing remarkably little making and considerably more consumin
 
 Since realising how much joy he got from music it has reawoken my own enjoyment in playing. I am now making more music in all forms that at any point since my teens. I have even played for paying audiences, albeit as part of a large ensemble. The ability to share some of my efforts was part of the reason I set up this website.
 
-Showcased with this blog entry is my son and I playing a fabulous arrangement by [Christian Morris](https://www.8notes.com/scores/35202.asp). Despite being a tune from preschool that most of us probably sang hundreds of times never thinking much of this arrangement blends swing style, major to minor tweaks and some well placed harmonies. We loved the sound from our first listen and decided to give it a go.
+Showcased with this blog entry is my son and I playing a fabulous arrangement by [Christian Morris](https://www.8notes.com/scores/35202.asp). Despite being a tune from preschool that most of us probably sang hundreds of times never thinking much of, this arrangement blends swing style, major to minor tweaks and some well placed harmonies. We loved the sound from our first listen and decided to give it a go.
 
 <video width="320" height="240" controls>
   <source src="video/SwingingFarm.mp4" type="video/mp4">
