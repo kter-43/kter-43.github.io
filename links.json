@@ -3,6 +3,7 @@
     {"src": "images/KTER.png", "link": "index.html", "alt": "Home", "text": "Home"},
     {"src": "images/woodturn.png", "link": "woodturn.html", "alt": "Woodtuning Gallery", "text": "Woodturning"},
     {"src": "images/music.png", "link": "music.html", "alt": "Musical recordings", "text": "Music"},
-    {"src": "images/engTools.png", "link": "tools.html", "alt": "Engineering tools", "text": "Tools"}
+    {"src": "images/engTools.png", "link": "tools.html", "alt": "Engineering tools", "text": "Tools"},
+    {"src": "images/soko.jpeg","link": "soko.html", "alt": "Sokoban", "text": "Sokoban"}
   ]
 }
