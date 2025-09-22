@@ -4,9 +4,9 @@ If you had asked me as little as a week ago, which dramatisation of Pride and Pr
 
 However, I find myself writing a review of an audio dramatisation of this Jane Austen classic from Audible. I regularly listen to audio books and drama in the car and stumbled upon this version which I took something of a punt on.
 
-** A bored man in possession of lots of time must be in want of entertainment **
+> A bored man in possession of lots of time must be in want of entertainment
 
-If you have not yet seen or read any of this story I can only say there will be the odd * spoiler * in this post. 
+If you have not yet seen or read any of this story I can only say there will be the odd **spoiler** in this post. 
 
 The opening from the 1995 BBC version is the imagined scene where Bingley finds Netherfield and undertakes to rent the property which effectively starts the story. Audible don't feel the need to be quite so fast and loose with Jane's opening but none the less set the story out well and introduce the characters with ease. Audible makes a lot more of the initial dislike Elizabeth takes to Mr Darcy and holds the position with greater more sustain that the BBC needed. This though allows the listener to paint a really powerful image of the scene and this, combined with the narration of thoughts, makes this aspect more 'visual'.  
 
