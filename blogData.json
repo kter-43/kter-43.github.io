@@ -19,5 +19,12 @@
     "tags": ["music","fun","clarinet"],
     "link": "blog/musicfood.md",
     "date": "2025-09-13"
+  },
+  {
+    "title": "Darcy v Darcy",
+    "author": "KTER",
+    "tags": ["book","review","drama"],
+    "link": "blog/pnp.md",
+    "date": "2025-09-22"
   }
 ]
