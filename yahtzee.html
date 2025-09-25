@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KTER</title>
+  <link rel="stylesheet" href="css/kter.css" />
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="kter-top">
+  <div class="kter-bar kter-purple kter-card">
+    <a class="navbar-brand" href="index.html"><img class="logo" style="width: 75px; height: auto; float: left;" src="images/KTER.png"></a>
+    <div id="navigation"></div>
+  </div>
+</div>
+
+<!-- Intro -->
+ <div class="kter-content" style="max-width:2000px;margin-top:46px">
+<!-- Add break so that the rest of the page lines up doccrectly-->
+</div>
+
+<div class="kter-content" style="max-width:2000px;margin-top:46px">
+  <h2 class="kter-wide">Yahtzee</h2>
+  <p class="kter-opacity"><i>Where luck and strategy collide</i></p>
+  <div id="yahtzee" class="kter-half">
+    <h2>Yahtzee</h2>
+  <div id="dice-container"></div>
+  <button onclick="rollDice()">Roll Dice</button>
+  <p>Rolls left: <span id="rolls-left">3</span></p>
+
+  <h2>Scoreboard</h2>
+  <table>
+    <thead>
+      <tr><th>Category</th><th>Score</th><th>Category</th><th>Score</th></tr>
+    </thead>
+    <tbody id="scoreboard">
+      <!-- Upper section Row 1 then Lower Section Row 2-->
+      <tr>
+        <td>Ones</td><td class="score-cell" onclick="scoreCategory('ones')">0</td>
+        <td>Three of a Kind</td><td class="score-cell" onclick="scoreCategory('threeKind')">0</td>
+      </tr>
+      <tr>
+        <td>Twos</td><td class="score-cell" onclick="scoreCategory('twos')">0</td>
+        <td>Four of a Kind</td><td class="score-cell" onclick="scoreCategory('fourKind')">0</td>
+      </tr>
+      <tr>
+        <td>Threes</td><td class="score-cell" onclick="scoreCategory('threes')">0</td>
+        <td>Full House</td><td class="score-cell" onclick="scoreCategory('fullHouse')">0</td>
+      </tr>
+      <tr>
+        <td>Fours</td><td class="score-cell" onclick="scoreCategory('fours')">0</td>
+        <td>Small Straight</td><td class="score-cell" onclick="scoreCategory('smallStraight')">0</td>
+      </tr>
+      <tr>
+        <td>Fives</td><td class="score-cell" onclick="scoreCategory('fives')">0</td>
+        <td>Large Straight</td><td class="score-cell" onclick="scoreCategory('largeStraight')">0</td>
+      </tr>
+      <tr>
+        <td>Sixes</td><td class="score-cell" onclick="scoreCategory('sixes')">0</td>
+        <td>Yahtzee</td><td class="score-cell" onclick="scoreCategory('yahtzee')">0</td>
+      </tr>
+      <tr>
+        <td>Bonus</td><td class="bonus">0</td>
+        <td>Chance</td><td class="score-cell" onclick="scoreCategory('chance')">0</td>
+      </tr>
+      <tr>
+        <td><i>Total Upper Section</i></td><td class="sum-upper">0</td>
+        <td><i>Total Lower Section</i></td><td class="sum-lower">0</td>
+        <tr><td></td><td></td><td><b>Total</b></td><td class="sum-total">0</td></tr>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="kter-half">
+    <p>Yahtzee needs little introduction so I have yet to write one!</p>
+    <h2>Gameplay</h2>
+    <p>To be written</p>
+  </div>
+</div>
+
+<!-- Outro -->
+ <div class="kter-container" style="max-width:2000px;margin-top:46px">
+<!-- Add break so that the rest of the page lines up doccrectly-->
+ <p class="kter-medium">KTER hopes you enjoyed this implementation of this classic game.</p>
+</div>
+
+<!-- Footer -->
+<footer class="kter-container kter-padding-64 kter-center kter-opacity kter-light-grey">
+  <div class="image-grid" id="image-grid"></div>
+  <p class="kter-medium">KTER since 1900 and typing error</p>
+</footer>
+
+
+
+<div class="kter-content" style="max-width:2000px;margin-top:46px">
+  <h2>Yahtzee</h2>
+  <div id="dice-container"></div>
+  <button onclick="rollDice()">Roll Dice</button>
+  <p>Rolls left: <span id="rolls-left">3</span></p>
+
+  <h2>Scoreboard</h2>
+  <table>
+    <thead>
+      <tr><th>Category</th><th>Score</th><th>Category</th><th>Score</th></tr>
+    </thead>
+    <tbody id="scoreboard">
+      <!-- Upper section Row 1 then Lower Section Row 2-->
+      <tr>
+        <td>Ones</td><td class="score-cell" onclick="scoreCategory('ones')">0</td>
+        <td>Three of a Kind</td><td class="score-cell" onclick="scoreCategory('threeKind')">0</td>
+      </tr>
+      <tr>
+        <td>Twos</td><td class="score-cell" onclick="scoreCategory('twos')">0</td>
+        <td>Four of a Kind</td><td class="score-cell" onclick="scoreCategory('fourKind')">0</td>
+      </tr>
+      <tr>
+        <td>Threes</td><td class="score-cell" onclick="scoreCategory('threes')">0</td>
+        <td>Full House</td><td class="score-cell" onclick="scoreCategory('fullHouse')">0</td>
+      </tr>
+      <tr>
+        <td>Fours</td><td class="score-cell" onclick="scoreCategory('fours')">0</td>
+        <td>Small Straight</td><td class="score-cell" onclick="scoreCategory('smallStraight')">0</td>
+      </tr>
+      <tr>
+        <td>Fives</td><td class="score-cell" onclick="scoreCategory('fives')">0</td>
+        <td>Large Straight</td><td class="score-cell" onclick="scoreCategory('largeStraight')">0</td>
+      </tr>
+      <tr>
+        <td>Sixes</td><td class="score-cell" onclick="scoreCategory('sixes')">0</td>
+        <td>Yahtzee</td><td class="score-cell" onclick="scoreCategory('yahtzee')">0</td>
+      </tr>
+      <tr>
+        <td>Bonus</td><td class="bonus">0</td>
+        <td>Chance</td><td class="score-cell" onclick="scoreCategory('chance')">0</td>
+      </tr>
+      <tr>
+        <td><i>Total Upper Section</i></td><td class="sum-upper">0</td>
+        <td><i>Total Lower Section</i></td><td class="sum-lower">0</td>
+        <tr><td></td><td></td><td><b>Total</b></td><td class="sum-total">0</td></tr>
+      </tr>
+      
+    </tbody>
+  </table>
+
+  <script>
+    
+    const diceContainer = document.getElementById('dice-container');
+    const rollsLeftDisplay = document.getElementById('rolls-left');
+
+    let dice = [null, null, null, null, null];
+    let held = [false, false, false, false, false];
+    let rollsLeft = 3;
+    let hasRolled = false;
+    let scoredCategories = {};
+
+    function renderDice() {
+      diceContainer.innerHTML = '';
+      dice.forEach((value, index) => {
+        const die = document.createElement('div');
+        die.className = 'dice' + (held[index] ? ' held' : '');
+        die.textContent = hasRolled ? value : '?';
+        die.onclick = () => {
+          if (hasRolled) toggleHold(index);
+        };
+        diceContainer.appendChild(die);
+      });
+    }
+
+    function rollDice() {
+      if (rollsLeft === 0) return;
+      dice = dice.map((val, i) => held[i] ? val : Math.floor(Math.random() * 6) + 1);
+      hasRolled = true;
+      rollsLeft--;
+      rollsLeftDisplay.textContent = rollsLeft;
+      renderDice();
+    }
+
+    function toggleHold(index) {
+      held[index] = !held[index];
+      renderDice();
+    }
+
+    function scoreCategory(category) {
+      if (scoredCategories[category]) return;
+      const counts = Array(6).fill(0);
+      dice.forEach(val => counts[val - 1]++);
+
+      let score = 0;
+      switch (category) {
+        case 'ones': score = counts[0] * 1; break;
+        case 'twos': score = counts[1] * 2; break;
+        case 'threes': score = counts[2] * 3; break;
+        case 'fours': score = counts[3] * 4; break;
+        case 'fives': score = counts[4] * 5; break;
+        case 'sixes': score = counts[5] * 6; break;
+        case 'threeKind':
+          score = counts.some(c => c >= 3) ? dice.reduce((a, b) => a + b, 0) : 0;
+          break;
+        case 'fourKind':
+          score = counts.some(c => c >= 4) ? dice.reduce((a, b) => a + b, 0) : 0;
+          break;
+        case 'fullHouse':
+          score = counts.includes(3) && counts.includes(2) ? 25 : 0;
+          break;
+        case 'smallStraight':
+          score = hasStraight(counts, 4) ? 30 : 0;
+          break;
+        case 'largeStraight':
+          score = hasStraight(counts, 5) ? 40 : 0;
+          break;
+        case 'yahtzee':
+          score = counts.some(c => c === 5) ? 50 : 0;
+          break;
+        case 'chance':
+          score = dice.reduce((a, b) => a + b, 0);
+          break;
+      }
+
+      const cell = document.querySelector(`td.score-cell[onclick*="${category}"]`);
+      cell.textContent = score;
+      cell.classList.add('scored');
+      scoredCategories[category] = true;
+
+      updateSums();
+      resetTurn();
+    }
+
+    function hasStraight(counts, length) {
+      const binary = counts.map(c => c > 0 ? 1 : 0).join('');
+      const patterns = {
+        4: ['1111', '01111', '11110'],
+        5: ['11111']
+      };
+      return patterns[length].some(p => binary.includes(p));
+    }
+
+    function updateSums() {
+      const upperCategories = ['ones', 'twos', 'threes', 'fours', 'fives', 'sixes'];
+      const lowerCategories = ['threeKind', 'fourKind', 'fullHouse', 'smallStraight', 'largeStraight', 'yahtzee', 'chance'];
+
+      let upperSum = 0;
+      upperCategories.forEach(cat => {
+        const cell = document.querySelector(`td.score-cell[onclick*="${cat}"]`);
+        if (cell && cell.classList.contains('scored')) {
+          upperSum += parseInt(cell.textContent);
+        }
+      });
+
+      let bonus = upperSum >= 63 ? 35 : 0;
+      document.querySelector('td.bonus').textContent = bonus;
+
+      let lowerSum = 0;
+      lowerCategories.forEach(cat => {
+        const cell = document.querySelector(`td.score-cell[onclick*="${cat}"]`);
+        if (cell && cell.classList.contains('scored')) {
+          lowerSum += parseInt(cell.textContent);
+        }
+      });
+
+      document.querySelector('td.sum-upper').textContent = upperSum + bonus;
+      document.querySelector('td.sum-lower').textContent = lowerSum;
+      document.querySelector('td.sum-total').textContent = upperSum + bonus + lowerSum;
+    }
+
+    function resetTurn() {
+      rollsLeft = 3;
+      held = [false, false, false, false, false];
+      rollsLeftDisplay.textContent = rollsLeft;
+      dice = [null, null, null, null, null];
+      hasRolled = false;
+    
+      renderDice();
+    }
+
+    renderDice();
+  </script>
+</body>
+</html>
