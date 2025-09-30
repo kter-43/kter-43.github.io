@@ -9,24 +9,12 @@
 </head>
 <body>
 
-      <!-- Navbar -->
+<!-- Navbar -->
 <div class="kter-top">
   <div class="kter-bar kter-purple kter-card">
     <a class="navbar-brand" href="index.html"><img class="logo" style="width: 75px; height: auto; float: left;" src="images/KTER.png"></a>
-  
-    <a class="kter-bar-item kter-button kter-padding-large kter-hide-medium kter-hide-large kter-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-    <a href="index.html" class="kter-bar-item kter-button kter-padding-large kter-hover-deep-purple kter-text-deep-purple kter-hover-text-purple">HOME</a>
-    <a href="woodturn.html" class="kter-bar-item kter-button kter-padding-large kter-hide-small kter-hover-deep-purple kter-text-deep-purple kter-hover-text-purple">WOODTURNING</a>
-    <a href="music.html" class="kter-bar-item kter-button kter-padding-large kter-hide-small kter-hover-deep-purple kter-text-deep-purple kter-hover-text-purple">MUSIC</a>
-    <a href="tools.html" class="kter-bar-item kter-button kter-padding-large kter-hide-small kter-hover-deep-purple kter-text-deep-purple kter-hover-text-purple">TOOLS</a>
+    <div id="navigation"></div>
   </div>
-</div>
-
-<!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
-<div id="navDemo" class="kter-bar-block kter-black kter-hide kter-hide-large kter-hide-medium kter-top" style="margin-top:46px">
-  <a href="woodturn.html" class="kter-bar-item kter-button kter-padding-large" onclick="myFunction()">WOODTURNING</a>
-  <a href="music.html" class="kter-bar-item kter-button kter-padding-large" onclick="myFunction()">MUSIC</a>
-  <a href="tools.html" class="kter-bar-item kter-button kter-padding-large" onclick="myFunction()">TOOLS</a>
 </div>
 
 <!-- Intro -->
@@ -35,22 +23,17 @@
 </div>
 
 <div class="kter-row-padding">
-  <h2 class="kter-wide">KTER's Tool Selection</h2>
+  <h2 class="kter-wide">KTER's Game Selection</h2>
   <p class="kter-opacity"><i>Occassionally fun diversions KTER have developed</i><br>KTER have implemented versions of classic games and where known
     provided credit to the original developed. For the avoidance of doubt unless directly stated KTER only implmented the code and did not develop the idea.</p>
   <div id="sidebar" class="kter-quarter">
       <a href="#fdsCheck" class="kter-bar-item kter-button kter-padding-large" onclick="myFunction()">FDS Mesh Checker</a>
   </div>
   <div id="main" class="kter-threequarter">
-    <h3 id="fdsCheck" class="kter-wide">FDS Mesh Size Check</h3>
-    <div id="Notes" class="kter-half">
-        <p>This tool doesn't replace engineering judgement. It calculates the characteristic fire
-        diameter using the equation from the FDS User Guide. The equation is as shown. To use input
-        the required data and click the calculate button."></p>
-        <img src="images/dStar.png" width="300"/>
+    <div id="main" class="kter-half">
+        <a class="navbar-brand" href="soko.html"><img class="logo" style="width: 600px; height: auto; float: left;" src="images/soko.png"></a>
     </div>
     <div id="main" class="kter-half">
-        <a class="navbar-brand" href="sokoban.html"><img class="logo" style="width: 600px; height: auto; float: left;" src="images/soko.png"></a>
         <a class="navbar-brand" href="yahtzee.html"><img class="logo" style="width: 600px; height: auto; float: left;" src="images/yahtzee.png"></a>
     </div>
   </div>
@@ -64,30 +47,7 @@
 
   <script src="js/links.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-  <script> <!-- FDS DSTAR CODE -->
-    document.getElementById('calcForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const fhrr = parseFloat(document.getElementById('fhrr').value);
-      const dens = parseFloat(document.getElementById('dens').value);
-      const sphc = parseFloat(document.getElementById('sphc').value);
-      const tamb = parseFloat(document.getElementById('tamb').value);
-      const grav = parseFloat(document.getElementById('grav').value);
-      const dStar = (fhrr/(dens*sphc*tamb*(grav**0.5)))**(2/5);
-      const dStar1 = dStar/0.5;
-      const dStar2 = dStar/0.25;
-      const dStar3 = dStar/0.125;
-      const dStar4 = dStar/4;
-      const dStar5 = dStar/10;
-      const dStar6 = dStar/16;
-
-      document.getElementById("result").innerHTML =
-        `<p>D*/dx for cell size 0.500m: ${dStar1.toFixed(2)}</p>` +
-        `<p>D*/dx for cell size 0.250m: ${dStar2.toFixed(2)}</p>` +
-        `<p>D*/dx for cell size 0.125m: ${dStar3.toFixed(2)}</p>` +
-        `<p>D*/dx =  4 requires a cell size of: ${dStar4.toFixed(3)} m</p>` +
-        `<p>D*/dx = 10 requires a cell size of: ${dStar5.toFixed(3)} m</p>` +
-        `<p>D*/dx = 16 requires a cell size of: ${dStar6.toFixed(3)} m</p>`;
-    });
-  </script>
+  
 </body>
 </html>
+
