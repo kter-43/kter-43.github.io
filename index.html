@@ -46,7 +46,10 @@
     <script src="js/blog.js"></script>
     <script>
       window.MathJax = {
-        tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
+        tex: {
+            inlineMath: [['$', '$']],   // Single $ for inline
+            displayMath: [['$$', '$$']] // Double $$ for block
+          },
         svg: { fontCache: 'global' }
       };
     </script>
