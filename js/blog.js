@@ -32,6 +32,12 @@ async function loadPost(post) {
     const markdown = await response.text();
     document.getElementById('postContent').innerHTML = marked.parse(markdown);
     document.getElementById('postImage').innerHTML = post.image ? `<img src="${post.image}" alt="Post Image">` : '';
+    
+    // Trigger MathJax typesetting after content is inserted
+    if (window.MathJax && window.MathJax.typesetPromise) {
+        window.MathJax.typesetPromise([document.getElementById('postContent')])
+            .catch(err => console.error('MathJax typeset failed:', err));
+    }
 }
 
 document.getElementById('searchBar').addEventListener('input', function() {
