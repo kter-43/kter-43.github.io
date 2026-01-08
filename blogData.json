@@ -35,10 +35,17 @@
     "date": "2025-11-27"
   },
   {
-    "title": "Foxy Equiplibrium",
+    "title": "Foxy Equilibrium",
     "author": "KTER",
     "tags": ["maths","equations","predator","prey"],
     "link": "blog/RabbitFox_2.md",
     "date": "2025-11-29"
+  },
+  {
+    "title": "Developing Competence",
+    "author": "KTER",
+    "tags": ["diplomacy","webapp","competence"],
+    "link": "blog/dip01.md",
+    "date": "2026-01-08"
   }
 ]
