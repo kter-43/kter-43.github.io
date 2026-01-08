@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>Diplomacy</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <link rel="stylesheet" href="diplomacy/styles.css"/>
+</head>
+<body>
+  <div class="app">
+    <div class="board">
+      <svg id="svgBoard" viewBox="0 0 1835 1360" role="img" aria-label="Diplomacy Map"></svg>
+    </div>
+    <aside class="panel" id="panel">
+      <header>
+        <h1>Diplomacy</h1>
+        <p id="phaseLabel"></p>
+        <div id="errBanner" class="msg bad" style="display:none"></div>
+      </header>
+      <div class="legend" id="legend"></div>
+      <div class="controls">
+        <button class="primary" id="btnResolve">Resolve Phase</button>
+        <button id="btnResetOrders">Reset Orders</button>
+        <button id="btnRandom">Random Demo Orders</button>
+        <button id="btnAdvance" title="Force advance (admin)">Force Advance</button>
+        <button id="btnExport" title="Download current game state as JSON">Export Game State</button>
+      </div>
+      <div id="ordersRoot"></div>
+      <section class="log" id="log"></section>
+      <footer class="foot">
+        <a href="README.md" target="_blank">README</a>
+      </footer>
+    </aside>
+  </div>
+  <script src="diplomacy/map.js" defer></script>
+  <script src="diplomacy/rules.js" defer></script>
+  <script src="diplomacy/app.js" defer></script>
+</body>
+</html>
