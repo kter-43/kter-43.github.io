@@ -10,3 +10,4 @@ This sequence of posts will also act as something of a programming manual so I c
 
 The game is held in an html file with a map panel and a movement log panel. The game is then implemented across three JavaScript files covering the map, the rules of the game and the creation and functionality of the app.
 
+<a class="navbar-brand" href="diplomacy.html"><img class="logo" style="width: 600px; height: auto; float: left;" src="images/diplomacy.png"></a>
