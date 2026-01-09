@@ -1,5 +1,4 @@
-#Competence and Diplomacy 
-
+# Competence and Diplomacy 
 I am a moderately educated chap but there are many things I have minimum experience and by extension competence. This sequence of blog articles are describing a quest to achieve competence in something I have no need to be competent in.
 
 I really like the board game Diplomacy. The game is in my opinion brilliant because it has no luck element involved. There are no dice, no spinners, no coin flip just pure strategy. In this sense it is a lot like chess.
