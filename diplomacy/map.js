@@ -1,4 +1,3 @@
-
 // --- Map & setup ---
 const POWERS = [
   { id:"ENG", name:"England", color:"#9400D3", homes:["Lon","Lvp","Edi"] },
@@ -12,7 +11,9 @@ const POWERS = [
 const byPower = id => POWERS.find(p=>p.id===id);
 
 const PROVINCES = {
-  "Adr": {name:"Adriatic Sea", type:"sea", x:793.5, y:1048.0, adj:["Ion","Apu","Ven","Tri","Alb"]},
+  "Adr": {name:"Adriatic Sea", type:"sea", x:793.5, y:1048.0, adj:["Ion","Apu","Ven","Tri","Alb"],
+    path:"M 1104 1335 C 1104 1321 1105 1317 1108 1304 C 1109 1300 1111 1292 1109 1288 C 1107 1284 1101 1280 1098 1277 C 1085 1265 1083 1264 1069 1254 C 1069 1254 1040 1231 1040 1231 C 1040 1231 1022 1219 1022 1219 C 1022 1219 1006 1205 1006 1205 C 1001 1201 995 1197 990 1192 C 986 1187 981 1178 982 1172 C 983 1164 989 1163 985 1155 C 978 1159 976 1173 969 1172 C 966 1171 962 1165 962 1162 C 960 1155 966 1148 964 1145 C 962 1142 958 1143 956 1144 C 952 1144 943 1148 939 1150 C 937 1151 935 1153 934 1155 C 933 1158 936 1161 935 1164 C 935 1166 932 1169 931 1171 C 929 1175 930 1182 931 1186 C 937 1198 952 1206 960 1219 C 964 1227 964 1234 967 1242 C 970 1251 979 1261 986 1267 C 991 1271 997 1274 1004 1276 C 1007 1276 1016 1277 1018 1279 C 1022 1283 1016 1286 1022 1293 C 1029 1301 1059 1319 1070 1327 C 1073 1329 1076 1332 1079 1335 C 1080 1337 1082 1340 1084 1340 C 1087 1341 1100 1336 1104 1335 z"
+  },
   "Aeg": {name:"Aegean Sea", type:"sea", x:1043.5, y:1230.0, adj:["Ion","Eas","Gre","Bul","Bul-sc","Con","Smy"]},
   "Alb": {name:"Albania", type:"land", coast:true, sc:false, x:906.5, y:1113.0, adj:["Adr","Ion","Tri","Ser","Gre"]},
   "Ank": {name:"Ankara", type:"land", coast:true, sc:true, x:1301.5, y:1110.0, adj:["Bla","Con","Smy","Arm"]},
@@ -35,7 +36,8 @@ const PROVINCES = {
   "Con": {name:"Constantinople", type:"land", coast:true, sc:true, x:1145.5, y:1137.0, adj:["Bla","Aeg","Bul","Ank","Smy"]},
   "Den": {name:"Denmark", type:"land", coast:true, sc:true, x:703.5, y:587.0, adj:["Nth","Hel","Ska","Bal","Swe","Kie"]},
   "Eas": {name:"Eastern Mediterranean", type:"sea", x:1218.5, y:1311.0, adj:["Ion","Aeg","Smy","Syr"]},
-  "Edi": {name:"Edinburgh", type:"land", coast:true, sc:true, x:473.5, y:514.0, adj:["Nwg","Nth","Cly","Lvp","Yor"]},
+  "Edi": {name:"Edinburgh", type:"land", coast:true, sc:true, x:473.5, y:514.0, adj:["Nwg","Nth","Cly","Lvp","Yor"],
+    path:"M 690 621 C 683 631 677 631 673 638 C 669 644 667 656 666 663 C 666 663 661 699 661 699 C 660 708 659 714 662 723 C 664 727 674 742 677 746 C 683 746 689 748 692 747 C 697 745 697 737 696 733 C 693 724 681 713 687 701 C 691 693 701 684 707 677 C 710 674 714 669 714 665 C 712 657 697 653 690 652 C 687 652 679 654 677 651 C 674 648 681 643 683 642 C 683 642 700 631 700 631 C 706 626 702 623 696 622 C 696 622 690 621 690 621 z"},
   "Eng": {name:"English Channel", type:"sea", x:394.5, y:751.0, adj:["MAO","Iri","Nth","Wal","Lon","Bre","Pic","Bel"]},
   "Fin": {name:"Finland", type:"land", coast:true, sc:false, x:988.5, y:380.0, adj:["Bot","Swe","Nwy","StP","StP-sc"]},
   "Gal": {name:"Galicia", type:"land", coast:false, sc:false, x:999.5, y:831.0, adj:["Boh","Sil","War","Ukr","Rum","Bud","Vie"]},
@@ -80,7 +82,7 @@ const PROVINCES = {
   "StP-nc": {name:"St Petersburg (North Coast)", type:"land", coast:true, sc:true, x:1218.0, y:222.0, adj:["Bar","Nwy"]},
   "StP-sc": {name:"St Petersburg (South Coast)", type:"land", coast:true, sc:true, x:1066.0, y:487.0, adj:["Bot","Fin","Lvn"]},
   "Swe": {name:"Sweden", type:"land", coast:true, sc:true, x:829.5, y:459.0, adj:["Bot","Bal","Ska","Den","Nwy","Fin"]},
-  "Swi": {name:"Switzerland", type:"land", coast:false, sc:false, x:642.0, y:928.0, adj:[]},
+  "Swi": {name:"Switzerland", type:"neutral", coast:false, sc:false, x:642.0, y:928.0, adj:[]},
   "Syr": {name:"Syria", type:"land", coast:true, sc:false, x:1452.5, y:1206.0, adj:["Eas","Smy","Arm"]},
   "Tri": {name:"Trieste", type:"land", coast:true, sc:true, x:825.5, y:996.0, adj:["Adr","Ven","Tyr","Vie","Bud","Ser","Alb"]},
   "Tun": {name:"Tunis", type:"land", coast:true, sc:true, x:622.5, y:1300.0, adj:["Wes","Tys","Ion","NAf"]},
@@ -95,6 +97,19 @@ const PROVINCES = {
   "Wes": {name:"Western Mediterranean", type:"sea", x:462.5, y:1163.0, adj:["MAO","Lyo","Tys","NAf","Tun","Spa","Spa-sc"]},
   "Yor": {name:"Yorkshire", type:"land", coast:true, sc:false, x:492.5, y:616.0, adj:["Nth","Edi","Lvp","Wal","Lon"]}
 };
+
+
+// --- Map background config (file lives alongside map.js) ---
+// Set the filename (or relative path) of your PNG background:
+const MAP_BG_IMAGE = 'map.png'; // e.g., 'map.png' in the same folder
+
+// Match the SVG's viewBox to ensure the image fills the board exactly:
+const MAP_BG_SIZE = { width: 1835, height: 1360 };
+
+// Export so app.js can read them
+window.MAP_BG_IMAGE = MAP_BG_IMAGE;
+window.MAP_BG_SIZE  = MAP_BG_SIZE;
+
 
 // Starting units & ownership
 let START_UNITS = [
@@ -116,7 +131,7 @@ let START_UNITS = [
   { id:"RUS_A_War", power:"RUS", kind:"A", prov:"War" },
   { id:"RUS_A_Mos", power:"RUS", kind:"A", prov:"Mos" },
   { id:"RUS_F_Sev", power:"RUS", kind:"F", prov:"Sev" },
-  { id:"RUS_F_StP", power:"RUS", kind:"F", prov:"StP" },
+  { id:"RUS_F_StP", power:"RUS", kind:"F", prov:"StP-sc" },
   { id:"TUR_A_Con", power:"TUR", kind:"A", prov:"Con" },
   { id:"TUR_A_Smy", power:"TUR", kind:"A", prov:"Smy" },
   { id:"TUR_F_Ank", power:"TUR", kind:"F", prov:"Ank" },
@@ -125,4 +140,3 @@ let START_OWNERSHIP = {}; POWERS.forEach(p=> p.homes.forEach(h=> START_OWNERSHIP
 
 // Export to window to avoid undefined in guards
 window.POWERS = POWERS; window.PROVINCES = PROVINCES; window.START_UNITS = START_UNITS; window.START_OWNERSHIP = START_OWNERSHIP; window.byPower = byPower;
-

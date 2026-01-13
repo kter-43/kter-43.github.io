@@ -25,7 +25,7 @@
       // App state
       let STATE = {
         year: 1901,
-        phaseIndex: 0,
+        phaseIndex: 0, // 0 = Spring move, 1 = Spring resolve, 2 = Autumn move, 3 = Autumn resolve, 4 = Winter build or destroy
         units: JSON.parse(JSON.stringify(START_UNITS)),
         ownership: { ...START_OWNERSHIP },
         orders: {},
@@ -40,6 +40,100 @@
       const ordersRoot = document.getElementById('ordersRoot');
       const phaseLabel = document.getElementById('phaseLabel');
       const logBox     = document.getElementById('log');
+
+      // Advance phase and year (roll year when we wrap to Spring Movement)
+      function advancePhase() {
+        STATE.phaseIndex = (STATE.phaseIndex + 1) % PHASES.length;
+        if (STATE.phaseIndex === 0) {
+          STATE.year += 1; // wrapped from W-A to S-M → new year
+        }
+        setPhaseLabel();
+      }
+
+      // Build a readable, per-power summary of last phase orders using unit positions BEFORE resolution
+      function buildLastPhaseSummary(orders, unitsBefore) {
+        const byId = new Map(unitsBefore.map(u => [u.id, u]));
+        const perPower = new Map(POWERS.map(p => [p.id, []]));
+
+        function nameOf(provId) {
+          return PROVINCES[provId] ? PROVINCES[provId].name : provId;
+        }
+
+        for (const [unitId, ord] of Object.entries(orders || {})) {
+          const u = byId.get(unitId);
+          if (!u) continue;
+
+          let text;
+          switch (ord.type) {
+            case 'MOVE':
+              text = `${u.kind} ${nameOf(u.prov)} → ${nameOf(ord.targetProv || '—')}`;
+              break;
+            case 'HOLD':
+              text = `${u.kind} ${nameOf(u.prov)} HOLD`;
+              break;
+            case 'SUPPORT_HOLD':
+              text = `${u.kind} ${nameOf(u.prov)} S ${ord.supportUnitId || '—'}`;
+              break;
+            case 'SUPPORT_MOVE':
+              text = `${u.kind} ${nameOf(u.prov)} S ${ord.supportUnitId || '—'} → ${nameOf(ord.targetProv || '—')}`;
+              break;
+            case 'CONVOY':
+              text = `${u.kind} ${nameOf(u.prov)} C ${ord.armyUnitId || '—'} ${nameOf(ord.fromProv || '—')} → ${nameOf(ord.toProv || '—')}`;
+              break;
+            default:
+              text = `${u.kind} ${nameOf(u.prov)} (unknown)`;
+          }
+          perPower.get(u.power)?.push(text);
+        }
+
+        // Return an array to preserve display order of POWERS
+        return POWERS.map(p => ({
+          power: p,
+          orders: perPower.get(p.id) || []
+        }));
+      }   
+
+      // Render the under-board pane from STATE.lastPhaseSummary
+      function renderLastMovesPane() {
+        const body = document.getElementById('lastMovesBody');
+        if (!body) return;
+
+        body.innerHTML = '';
+        const data = STATE.lastPhaseSummary;
+        if (!data) {
+          const p = document.createElement('div');
+          p.className = 'muted';
+          p.textContent = 'No prior phase.';
+          body.appendChild(p);
+          return;
+        }
+
+        data.forEach(({ power, orders }) => {
+          const wrap = document.createElement('div');
+          wrap.className = 'power';
+
+          const h4 = document.createElement('h4');
+          h4.textContent = power.name;
+          h4.style.color = power.color;
+          wrap.appendChild(h4);
+
+          const ul = document.createElement('ul');
+          if (!orders.length) {
+            const li = document.createElement('li');
+            li.textContent = '— no orders —';
+            ul.appendChild(li);
+          } else {
+            orders.forEach(t => {
+              const li = document.createElement('li');
+              li.textContent = t;
+              ul.appendChild(li);
+            });
+          }
+
+          wrap.appendChild(ul);
+          body.appendChild(wrap);
+        });
+      }
 
       function setPhaseLabel(){
         const ph = PHASES[STATE.phaseIndex];
@@ -89,39 +183,101 @@
         return t;
       }
 
+      
+      function ensureBackground(svg) {
+        const href = window.MAP_BG_IMAGE;
+        if (!href) return; // no background configured
+
+        const { width, height } = window.MAP_BG_SIZE || { width: 1835, height: 1360 };
+
+        // Reuse if already present
+        let img = svg.querySelector('#bgImage');
+        if (!img) {
+          img = document.createElementNS('http://www.w3.org/2000/svg', 'image');
+          img.setAttribute('id', 'bgImage');
+          img.setAttribute('x', '0');
+          img.setAttribute('y', '0');
+          img.setAttribute('preserveAspectRatio', 'xMidYMid slice');
+          // modern attribute
+          img.setAttribute('href', href);
+          // xlink fallback for older browsers
+          img.setAttributeNS('http://www.w3.org/1999/xlink', 'href', href);
+          svg.appendChild(img);
+        } else {
+          img.setAttribute('href', href);
+          img.setAttributeNS('http://www.w3.org/1999/xlink', 'href', href);
+        }
+        img.setAttribute('width', width);
+        img.setAttribute('height', height);
+      }
+
+
       // Province fill: current occupant -> last occupant -> default by type
       function computeNodeFill(pid, p) {
         const occ = STATE.units.find(u => u.prov === pid);
         if (occ) return byPower(occ.power).color;
         const last = STATE.lastOccupant.get(pid);
         if (last) return byPower(last).color;
-        return p.type === 'sea' ? '#0f172a' : '#2c3e50';
-      }
+                
+        // fall back to default map colours
+        if (p?.type === 'sea') return (window.MAP_COLORS?.sea ?? '#78b8bd');
+        if (p?.type === 'land') return (window.MAP_COLORS?.land ?? '#8ad475');
 
-      function drawBoard(){
-        svg.innerHTML='';
-        // draw edges
-        for(const [pid,p] of Object.entries(PROVINCES)){
-          (p.adj || []).forEach(adj=>{
-            const q=PROVINCES[adj];
-            if (!q) return; // tolerate minor mismatches
-            svg.appendChild(line(p.x,p.y,q.x,q.y,'edge'));
-          });
-        }
-        // draw province nodes + names
-        for (const [pid,p] of Object.entries(PROVINCES)){
-          svg.appendChild(circle(p.x,p.y,(p.type==='sea')?18:16,`prov-node ${p.type}`,null,computeNodeFill(pid,p)));
+        return (window.MAP_COLORS?.neutral ?? '#1b0115');
+
+      }
+      
+      function drawBoard() {
+        svg.innerHTML = '';
+
+        // Fixed background image behind everything else
+        ensureBackground(svg);
+        // --- draw edges ---
+        //for (const [pid, p] of Object.entries(PROVINCES)) {
+        //  (p.adj || []).forEach(adj => {
+        //    const q = PROVINCES[adj];
+        //    if (!q) return;
+        //    svg.appendChild(line(p.x, p.y, q.x, q.y, 'edge'));
+        //  });
+        //}
+        // --- draw province nodes + names ---
+        for (const [pid, p] of Object.entries(PROVINCES)) {
+          const fill = computeNodeFill(pid, p);
+
+          if (p.path) {
+            // Vector province shape
+            const pathEl = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+            pathEl.setAttribute('d', p.path);
+            pathEl.setAttribute('class', `prov-shape ${p.type}`);
+            pathEl.setAttribute('fill', fill);
+            svg.appendChild(pathEl);
+          } else {
+            // Fallback: node circle
+            svg.appendChild(circle(
+              p.x, p.y,
+              (p.type === 'sea') ? 24 : 20,
+              `prov-node ${p.type}`, null, fill));
+          }
+
+          // Province label (kept simple: anchored to province coords)
           const name = p.name + (p.sc ? ' ★' : '');
-          svg.appendChild(label(p.x+20,p.y-10,name,`prov-label ${p.type==='sea'?'sea-label':''}`));
+          svg.appendChild(label(
+            (p.x ?? 0) + 20,
+            (p.y ?? 0) - 10,
+            name,
+            `prov-label ${p.type === 'sea' ? 'sea-label' : ''}`
+          ));
         }
-        // draw units
-        STATE.units.forEach(u=>{
-          const p=PROVINCES[u.prov];
-          const fill=byPower(u.power).color;
-          svg.appendChild(circle(p.x,p.y,9,`unit ${u.dislodged?'dislodged':''}`, fill, fill));
-          svg.appendChild(label(p.x-4,p.y+4,u.kind,'prov-label'));
+
+        // --- draw units ---
+        STATE.units.forEach(u => {
+          const p = PROVINCES[u.prov];
+          const fill = byPower(u.power).color;
+          svg.appendChild(circle(p.x, p.y, 16, `unit ${u.dislodged ? 'dislodged' : ''}`, fill, fill));
+          svg.appendChild(label(p.x - 4, p.y + 4, u.kind, 'prov-label'));
         });
       }
+
 
       function writeOrder(unitId,payload){
         STATE.orders[unitId] = { unitId, ...payload };
@@ -255,17 +411,27 @@
       }
 
       // Controls
-      document.getElementById('btnResolve').addEventListener('click', ()=>{
+      document.getElementById('btnResolve').addEventListener('click', () => {
+        // Snapshot positions BEFORE resolve for clean rendering of last-phase orders
+        const unitsBefore = STATE.units.map(u => ({ ...u }));
+        STATE.lastPhaseSummary = buildLastPhaseSummary(STATE.orders, unitsBefore);
         const res = resolveMovementPhase(STATE);
-        // Apply positions
         STATE.units = res.units;
-        // Update last-occupant memory
+
+        // Update "last occupant" memory from the new positions
         STATE.units.forEach(u => STATE.lastOccupant.set(u.prov, u.power));
-        // Redraw & log
+
+        // Redraw board & update under-board summary and log
         drawBoard();
-        renderOrdersPanel();
+        renderLastMovesPane();
         appendLog(res.log, 'ok');
+
+        // Advance to the next phase and roll the year if needed
+        advancePhase();
+        STATE.orders = {};
+        renderOrdersPanel();
       });
+
 
       document.getElementById('btnResetOrders').addEventListener('click', ()=>{
         STATE.orders = {};
@@ -314,6 +480,7 @@
       setPhaseLabel();
       drawBoard();
       renderOrdersPanel();
+      renderLastMovesPane();
 
     } catch(e){
       showError('Startup error: ' + (e && e.message ? e.message : e));
