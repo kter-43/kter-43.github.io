@@ -9,16 +9,31 @@
 </head>
 <body>
   <div class="app">
-    <div class="board">
-      <svg id="svgBoard" viewBox="0 0 1835 1360" role="img" aria-label="Diplomacy Map"></svg>
+    <!-- Left column: board + last moves pane -->
+    <div>
+      <div class="board">
+        <svg id="svgBoard" viewBox="0 0 1835 1360" role="img" aria-label="Diplomacy Map"></svg>
+      </div>
+
+      <!-- Last Phase Moves (summary pane under the map) -->
+      <div id="lastMovesPane" class="underboard">
+        <h3 class="underboard-title">Last Phase Moves</h3>
+        <div id="lastMovesBody" class="moves-list">
+          <div class="muted">No prior phase.</div>
+        </div>
+      </div>
     </div>
+
+    <!-- Right column: controls and log -->
     <aside class="panel" id="panel">
       <header>
         <h1>Diplomacy</h1>
         <p id="phaseLabel"></p>
         <div id="errBanner" class="msg bad" style="display:none"></div>
       </header>
+
       <div class="legend" id="legend"></div>
+
       <div class="controls">
         <button class="primary" id="btnResolve">Resolve Phase</button>
         <button id="btnResetOrders">Reset Orders</button>
@@ -26,10 +41,12 @@
         <button id="btnAdvance" title="Force advance (admin)">Force Advance</button>
         <button id="btnExport" title="Download current game state as JSON">Export Game State</button>
       </div>
+
       <div id="ordersRoot"></div>
       <section class="log" id="log"></section>
       <footer class="foot">
         <a href="README.md" target="_blank">README</a>
+        <a href="map.svg" target="_blank" title="Open the static SVG board">Board SVG</a>
       </footer>
     </aside>
   </div>
