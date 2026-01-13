@@ -51,8 +51,15 @@
   {
     "title": "Mapping Diplomacy",
     "author": "KTER",
-    "tags": ["diplomacy","webapp","competence"],
+    "tags": ["diplomacy","webapp","mapping"],
     "link": "blog/dip02.md",
     "date": "2026-01-09"
+  },
+  {
+    "title": "Mapping Diplomacy again - This time it's personal",
+    "author": "KTER",
+    "tags": ["diplomacy","webapp","mapping"],
+    "link": "blog/dip03.md",
+    "date": "2026-01-13"
   }
 ]
