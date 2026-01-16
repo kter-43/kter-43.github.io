@@ -211,12 +211,34 @@
         img.setAttribute('height', height);
       }
 
+      function groupFor(pid) {
+        const g = (window.COAST_GROUPS && window.COAST_GROUPS[pid]);
+        return g ? g : [pid];
+      }    
+      function shouldHideNode(pid, p) {
+        // Hide if this province is part of a coast group AND it doesn't have its own path,
+        // while some sibling in the group *does* have a path (e.g., StP).
+        if (!window.COAST_GROUPS) return false;
+        const group = groupFor(pid);
+        if (group.length <= 1) return false;
+        const thisHasPath = !!p?.path;
+        if (thisHasPath) return false;
+        const groupHasAnyPath = group.some(q => !!(window.PROVINCES[q] && window.PROVINCES[q].path));
+        return groupHasAnyPath;
+      }
+      function groupLastOccupant(pid, lastMap) {
+        for (const k of groupFor(pid)) {
+          const v = lastMap.get(k);
+          if (v) return v;
+        }
+        return null;
+      }
 
       // Province fill: current occupant -> last occupant -> default by type
       function computeNodeFill(pid, p) {
-        const occ = STATE.units.find(u => u.prov === pid);
+        const occ = STATE.units.find(u => groupFor(pid).includes(u.prov));
         if (occ) return byPower(occ.power).color;
-        const last = STATE.lastOccupant.get(pid);
+        const last = STATE.lastOccupant.get(pid, STATE.lastOccupant);
         if (last) return byPower(last).color;
                 
         // fall back to default map colours
@@ -229,20 +251,10 @@
       
       function drawBoard() {
         svg.innerHTML = '';
-
-        // Fixed background image behind everything else
-        ensureBackground(svg);
-        // --- draw edges ---
-        //for (const [pid, p] of Object.entries(PROVINCES)) {
-        //  (p.adj || []).forEach(adj => {
-        //    const q = PROVINCES[adj];
-        //    if (!q) return;
-        //    svg.appendChild(line(p.x, p.y, q.x, q.y, 'edge'));
-        //  });
-        //}
         // --- draw province nodes + names ---
         for (const [pid, p] of Object.entries(PROVINCES)) {
           const fill = computeNodeFill(pid, p);
+          const hideNode = shouldHideNode(pid, p);
 
           if (p.path) {
             // Vector province shape
@@ -251,7 +263,7 @@
             pathEl.setAttribute('class', `prov-shape ${p.type}`);
             pathEl.setAttribute('fill', fill);
             svg.appendChild(pathEl);
-          } else {
+          } else if (!hideNode) {
             // Fallback: node circle
             svg.appendChild(circle(
               p.x, p.y,
@@ -419,7 +431,7 @@
         STATE.units = res.units;
 
         // Update "last occupant" memory from the new positions
-        STATE.units.forEach(u => STATE.lastOccupant.set(u.prov, u.power));
+        STATE.units.forEach(u => {groupFor(u.prov).forEach(id => STATE.lastOccupant.set(id, u.power));});
 
         // Redraw board & update under-board summary and log
         drawBoard();
