@@ -1,32 +1,64 @@
-let CHARTS = null;
 
+let CHARTS = null;
 // Change this path if you put the JSON elsewhere (e.g. "data/charts.json")
 const CHARTS_JSON_URL = "charts.json";
 
 async function loadCharts() {
   try {
-    statusLabelEl.textContent = "Status: Loading…";
     const res = await fetch(CHARTS_JSON_URL, { cache: "no-store" });
     if (!res.ok) throw new Error(`Failed to load ${CHARTS_JSON_URL} (HTTP ${res.status})`);
 
-    const data = await res.json();
-    CHARTS = data;
+    CHARTS = await res.json();
 
-    // Enable UI
+    // Enable chart/level UI now that we have data
     chartSel.disabled = false;
+    levelSel.disabled = false;
     generateBtn.disabled = false;
 
+    // Populate based on current chart selection
     populateLevelsForSelectedChart();
-    chartLevelLabelEl.textContent = `Chart ${chartSel.value} Level —`;
-    descEl.textContent = "Select a chart and level, then click “Generate 5 steps”.";
-    statusLabelEl.textContent = "Status: Ready";
   } catch (err) {
     CHARTS = null;
-    statusLabelEl.textContent = "Status: Error";
     descEl.textContent = `Error loading charts: ${err.message}`;
     chartSel.disabled = true;
     levelSel.disabled = true;
     generateBtn.disabled = true;
+  }
+}
+
+function populateLevelsForSelectedChart() {
+  const c = chartSel.value;
+
+  // Guard: charts not loaded yet
+  if (!CHARTS || !CHARTS[c] || typeof CHARTS[c] !== "object") {
+    levelSel.innerHTML = "";
+    const opt = document.createElement("option");
+    opt.value = "";
+    opt.textContent = "(Charts not loaded)";
+    levelSel.appendChild(opt);
+    levelSel.disabled = true;
+    return;
+  }
+
+  const levelsObj = CHARTS[c];
+  const levelKeys = Object.keys(levelsObj).sort();
+
+  levelSel.innerHTML = "";
+
+  if (levelKeys.length === 0) {
+    const opt = document.createElement("option");
+    opt.value = "";
+    opt.textContent = "(No levels for this chart)";
+    levelSel.appendChild(opt);
+    levelSel.disabled = true;
+  } else {
+    levelSel.disabled = false;
+    for (const lvl of levelKeys) {
+      const opt = document.createElement("option");
+      opt.value = lvl;
+      opt.textContent = `Level ${lvl}`;
+      levelSel.appendChild(opt);
+    }
   }
 }
 
@@ -268,6 +300,8 @@ pauseBtn.addEventListener("click", pause);
 skipBtn.addEventListener("click", () => { if (steps.length === 5) advance(); });
 resetBtn.addEventListener("click", () => { if (steps.length === 5) resetSequence(); });
 
-// Initial boot
-populateLevelsForSelectedChart();
+
+// Initial boot (load JSON first, then populate levels)
 chartLevelLabelEl.textContent = `Chart ${chartSel.value} Level —`;
+loadCharts();
+
