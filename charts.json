@@ -1,0 +1,94 @@
+
+{
+1: {
+    A_Plus: [
+      { seconds: 120,  number: 20,    image: "images/chart1/ex1.png", description: "Forward bend to floor then stretch upward and backward" },
+      { seconds: 60,  number: 18,     image: "images/chart1/ex2.png", description: "Sit up to see heels" },
+      { seconds: 60,  number: 18,     image: "images/chart1/ex3.png", description: "Raise head and one leg then the other" },
+      { seconds: 60,  number: 13,     image: "images/chart1/ex4.png", description: "Straighten arms lifting upper body, keeping knees on floor the lower" },
+      { seconds: 360, number: "400. Jumps every 75", image: "images/chart1/ex5.png", description: "Stationary run with 'scissor jumps'." }
+    ],
+    A: [
+      { seconds: 120,  number: 18,    image: "images/chart1/ex1.png", description: "Forward bend to floor then stretch upward and backward" },
+      { seconds: 60,  number: 17,     image: "images/chart1/ex2.png", description: "Sit up to see heels" },
+      { seconds: 60,  number: 17,     image: "images/chart1/ex3.png", description: "Raise head and one leg then the other" },
+      { seconds: 60,  number: 12,     image: "images/chart1/ex4.png", description: "Straighten arms lifting upper body, keeping knees on floor the lower" },
+      { seconds: 360, number: "375. Jumps every 75", image: "images/chart1/ex5.png", description: "Stationary run with 'scissor jumps'." }
+    ],
+    A_Minus: [
+      { seconds: 120,  number: 16,    image: "images/chart1/ex1.png", description: "Forward bend to floor then stretch upward and backward" },
+      { seconds: 60,  number: 15,     image: "images/chart1/ex2.png", description: "Sit up to see heels" },
+      { seconds: 60,  number: 16,     image: "images/chart1/ex3.png", description: "Raise head and one leg then the other" },
+      { seconds: 60,  number: 11,     image: "images/chart1/ex4.png", description: "Straighten arms lifting upper body, keeping knees on floor the lower" },
+      { seconds: 360, number: "335. Jumps every 75", image: "images/chart1/ex5.png", description: "Stationary run with 'scissor jumps'." }
+    ],
+    B_Plus: [
+      { seconds: 120,  number: 14,    image: "images/chart1/ex1.png", description: "Forward bend to floor then stretch upward and backward" },
+      { seconds: 60,  number: 13,     image: "images/chart1/ex2.png", description: "Sit up to see heels" },
+      { seconds: 60,  number: 15,     image: "images/chart1/ex3.png", description: "Raise head and one leg then the other" },
+      { seconds: 60,  number: 9,     image: "images/chart1/ex4.png", description: "Straighten arms lifting upper body, keeping knees on floor the lower" },
+      { seconds: 360, number: "320. Jumps every 75", image: "images/chart1/ex5.png", description: "Stationary run with 'scissor jumps'." }
+    ],
+    B: [
+      { seconds: 120,  number: 12,    image: "images/chart1/ex1.png", description: "Forward bend to floor then stretch upward and backward" },
+      { seconds: 60,  number: 12,     image: "images/chart1/ex2.png", description: "Sit up to see heels" },
+      { seconds: 60,  number: 14,     image: "images/chart1/ex3.png", description: "Raise head and one leg then the other" },
+      { seconds: 60,  number: 8,     image: "images/chart1/ex4.png", description: "Straighten arms lifting upper body, keeping knees on floor the lower" },
+      { seconds: 360, number: "305. Jumps every 75", image: "images/chart1/ex5.png", description: "Stationary run with 'scissor jumps'." }
+    ],
+    B_Minus: [
+      { seconds: 120,  number: 10,    image: "images/chart1/ex1.png", description: "Forward bend to floor then stretch upward and backward" },
+      { seconds: 60,  number: 11,     image: "images/chart1/ex2.png", description: "Sit up to see heels" },
+      { seconds: 60,  number: 13,     image: "images/chart1/ex3.png", description: "Raise head and one leg then the other" },
+      { seconds: 60,  number: 7,     image: "images/chart1/ex4.png", description: "Straighten arms lifting upper body, keeping knees on floor the lower" },
+      { seconds: 360, number: "280. Jumps every 75", image: "images/chart1/ex5.png", description: "Stationary run with 'scissor jumps'." }
+    ],
+    C_Plus: [
+      { seconds: 120,  number: 8,    image: "images/chart1/ex1.png", description: "Forward bend to floor then stretch upward and backward" },
+      { seconds: 60,  number: 9,     image: "images/chart1/ex2.png", description: "Sit up to see heels" },
+      { seconds: 60,  number: 12,     image: "images/chart1/ex3.png", description: "Raise head and one leg then the other" },
+      { seconds: 60,  number: 6,     image: "images/chart1/ex4.png", description: "Straighten arms lifting upper body, keeping knees on floor the lower" },
+      { seconds: 360, number: "260. Jumps every 75", image: "images/chart1/ex5.png", description: "Stationary run with 'scissor jumps'." }
+    ],
+    C: [
+      { seconds: 120,  number: 7,    image: "images/chart1/ex1.png", description: "Forward bend to floor then stretch upward and backward" },
+      { seconds: 60,  number: 8,     image: "images/chart1/ex2.png", description: "Sit up to see heels" },
+      { seconds: 60,  number: 10,     image: "images/chart1/ex3.png", description: "Raise head and one leg then the other" },
+      { seconds: 60,  number: 5,     image: "images/chart1/ex4.png", description: "Straighten arms lifting upper body, keeping knees on floor the lower" },
+      { seconds: 360, number: "235. Jumps every 75", image: "images/chart1/ex5.png", description: "Stationary run with 'scissor jumps'." }
+    ],
+    C_Minus: [
+      { seconds: 120,  number: 6,    image: "images/chart1/ex1.png", description: "Forward bend to floor then stretch upward and backward" },
+      { seconds: 60,  number: 7,     image: "images/chart1/ex2.png", description: "Sit up to see heels" },
+      { seconds: 60,  number: 8,     image: "images/chart1/ex3.png", description: "Raise head and one leg then the other" },
+      { seconds: 60,  number: 4,     image: "images/chart1/ex4.png", description: "Straighten arms lifting upper body, keeping knees on floor the lower" },
+      { seconds: 360, number: "205. Jumps every 75", image: "images/chart1/ex5.png", description: "Stationary run with 'scissor jumps'." }
+    ],
+    D_Plus: [
+      { seconds: 120,  number: 4,    image: "images/chart1/ex1.png", description: "Forward bend to floor then stretch upward and backward" },
+      { seconds: 60,  number: 5,     image: "images/chart1/ex2.png", description: "Sit up to see heels" },
+      { seconds: 60,  number: 6,     image: "images/chart1/ex3.png", description: "Raise head and one leg then the other" },
+      { seconds: 60,  number: 3,     image: "images/chart1/ex4.png", description: "Straighten arms lifting upper body, keeping knees on floor the lower" },
+      { seconds: 360, number: "175. Jumps every 75", image: "images/chart1/ex5.png", description: "Stationary run with 'scissor jumps'." }
+    ],
+    D: [
+      { seconds: 120,  number: 3,    image: "images/chart1/ex1.png", description: "Forward bend to floor then stretch upward and backward" },
+      { seconds: 60,  number: 4,     image: "images/chart1/ex2.png", description: "Sit up to see heels" },
+      { seconds: 60,  number: 5,     image: "images/chart1/ex3.png", description: "Raise head and one leg then the other" },
+      { seconds: 60,  number: 3,     image: "images/chart1/ex4.png", description: "Straighten arms lifting upper body, keeping knees on floor the lower" },
+      { seconds: 360, number: "145. Jumps every 75", image: "images/chart1/ex5.png", description: "Stationary run with 'scissor jumps'." }
+    ],
+    D_Minus: [
+      { seconds: 120,  number: 2,    image: "images/chart1/ex1.png", description: "Forward bend to floor then stretch upward and backward" },
+      { seconds: 60,  number: 3,     image: "images/chart1/ex2.png", description: "Sit up to see heels" },
+      { seconds: 60,  number: 4,     image: "images/chart1/ex3.png", description: "Raise head and one leg then the other" },
+      { seconds: 60,  number: 2,     image: "images/chart1/ex4.png", description: "Straighten arms lifting upper body, keeping knees on floor the lower" },
+      { seconds: 360, number: "100. Jumps every 75", image: "images/chart1/ex5.png", description: "Stationary run with 'scissor jumps'." }
+    ]
+  },
+  2: {},
+  3: {},
+  4: {},
+  5: {},
+  6: {}
+}
