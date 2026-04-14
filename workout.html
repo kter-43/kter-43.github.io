@@ -1,43 +1,26 @@
-<!doctype html>
-<html lang="en-GB">
+
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>5-Step Countdown Workout</title>
-  <style>
-    :root { --fg:#111; --muted:#666; --bg:#fff; }
-    body { margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; background:var(--bg); color:var(--fg); }
-    .wrap { max-width: 980px; margin: 0 auto; padding: 18px 16px 48px; }
-
-    .topbar{
-      display:flex; gap:10px; flex-wrap:wrap; align-items:center; justify-content:center;
-      padding: 10px 0 16px; border-bottom:1px solid #eee; margin-bottom: 14px;
-    }
-    label { font-weight: 700; }
-    select {
-      padding: 8px 10px; border-radius: 10px; border:1px solid #ccc; background:#fff;
-      font-size: 16px;
-    }
-    button {
-      border: 1px solid #ccc; background:#f7f7f7; padding: 10px 14px; border-radius: 10px;
-      cursor:pointer; font-weight:700;
-    }
-    button:disabled{ opacity:0.5; cursor:not-allowed; }
-    button:active { transform: translateY(1px); }
-
-    #timer { font-size: 72px; font-weight: 900; text-align:center; letter-spacing: 1px; margin: 18px 0 4px; }
-    #number { font-size: 96px; font-weight: 950; text-align:center; margin: 8px 0 18px; }
-
-    #image { display:block; margin: 0 auto 16px; max-width: min(92vw, 760px); max-height: 52vh; object-fit: contain; }
-    #desc { font-size: 22px; line-height: 1.35; text-align:center; margin: 0 auto; max-width: 65ch; }
-
-    .meta { margin-top: 14px; text-align:center; color:var(--muted); font-size: 14px; }
-    .pill { display:inline-block; padding: 4px 10px; border-radius: 999px; background:#f2f2f2; }
-    .controls { display:flex; gap:10px; justify-content:center; margin-top: 14px; flex-wrap: wrap; }
-  </style>
+  <meta charset="UTF-8">
+  <title>KTER</title>
+  <link rel="stylesheet" href="css/kter.css" />
 </head>
-
 <body>
+<main>
+<!-- Navbar -->
+<div class="kter-top">
+  <div class="kter-bar kter-purple kter-card">
+    <a class="navbar-brand" href="index.html"><img class="logo" style="width: 75px; height: auto; float: left;" src="images/KTER.png"></a>
+    <div id="navigation"></div>
+  </div>
+</div>
+
+<!-- Intro -->
+ <div class="kter-content" style="max-width:2000px;margin-top:46px">
+<!-- Add break so that the rest of the page lines up doccrectly-->
+</div>
+
   <div class="wrap">
     <!-- Chart/Level selection + generate -->
     <div class="topbar">
