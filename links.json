@@ -5,7 +5,7 @@
     {"src": "images/music.png", "link": "music.html", "alt": "Musical recordings", "text": "Music"},
     {"src": "images/engTools.png", "link": "tools.html", "alt": "Engineering tools", "text": "Tools"},
     {"src": "images/games.png","link": "games.html", "alt": "Games", "text": "Games"},
-    {"src": "images/KTER.png", "link": "5bx.html", "alt": "Exercise Programme", "text": "5BX"}
+    {"src": "images/5bx.png", "link": "5bx.html", "alt": "Exercise Programme", "text": "5BX"}
   ]
 }
 
